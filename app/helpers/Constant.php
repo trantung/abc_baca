@@ -8,7 +8,11 @@ define('PAGINATE', 20);
 //pagination frontend
 define('PAGINATION', 15);
 //url upload img
-define('UPLOADIMG', '/images');
+define('UPLOADIMG', '/images/');
+define('UPLOADIMG_POST', '/images/post/');
+define('UPLOADIMG_TYPE', '/images/type/');
+define('UPLOADIMG_GALLERY', '/images/gallery/');
+define('UPLOADIMG_SLIDE', '/images/slide/');
 //device
 define('MOBILE', 1);
 define('COMPUTER', 2);

@@ -9,7 +9,13 @@ class PostController extends AdminController {
 	 */
 	public function index()
 	{
-		$data = Post::orderBy('id', 'asc')->paginate(PAGINATE);
+		$data = Post::orderBy('id', 'desc')->paginate(PAGINATE);
+		return View::make('admin.post.index')->with(compact('data'));
+	}
+
+	public function search()
+	{
+		$data = CommonAdmin::searchPost();
 		return View::make('admin.post.index')->with(compact('data'));
 	}
 
@@ -20,7 +26,7 @@ class PostController extends AdminController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('admin.post.create');
 	}
 
 	/**
@@ -30,7 +36,31 @@ class PostController extends AdminController {
 	 */
 	public function store()
 	{
-		//
+		$rules = array(
+			'name'   => 'required|unique:posts|unique:post_types',
+			'slug'   => 'unique:posts|unique:post_types',
+		);
+		$input = Input::except('_token');
+		$inputSlug = convert_string_vi_to_en($input['name']);
+		$input['slug'] = strtolower(preg_replace('/[^a-zA-Z0-9]+/i','-', $inputSlug));
+		$validator = Validator::make($input,$rules);
+		if($validator->fails()) {
+			return Redirect::action('PostController@create')
+	            ->withErrors($validator)
+	            ->withInput($input);
+        } else {
+        	$input['image'] = CommonAdmin::uploadImage(UPLOADIMG_POST, 'image');
+        	$input['meta_image'] = CommonAdmin::uploadImage(UPLOADIMG_POST, 'meta_image');
+        	if($input['start_date'] == '') {
+				$input['start_date'] = date('Y-m-d H:i:00');
+			}
+        	$id = Post::create($input)->id;
+        	if($id) {
+        		return Redirect::action('PostController@index')->with('success', 'Đã lưu!');
+        	} else {
+        		dd('Error');
+        	}
+        }
 	}
 
 
@@ -55,8 +85,7 @@ class PostController extends AdminController {
 	public function edit($id)
 	{
 		$data = Post::find($id);
-		$type = $data->type;
-        return View::make('admin.post.edit', array('data'=>$data, 'type'=>$type));
+        return View::make('admin.post.edit', array('data'=>$data));
 	}
 
 
@@ -68,11 +97,28 @@ class PostController extends AdminController {
 	 */
 	public function update($id)
 	{
-        $input = Input::except('_token');
-        $data = Post::find($id);
-    	$data->update($input);
-    	$type = $data->type;
-		return Redirect::action('PostController@btype', $type)->with('message', 'Đã lưu!');
+		$rules = array(
+			'name'   => 'required|unique:posts,name,'.$id.'|unique:post_types',
+			'slug'   => 'unique:posts,slug,'.$id.'|unique:post_types',
+		);
+		$input = Input::except('_token');
+		$inputSlug = convert_string_vi_to_en($input['name']);
+		$input['slug'] = strtolower(preg_replace('/[^a-zA-Z0-9]+/i','-', $inputSlug));
+		$validator = Validator::make($input,$rules);
+		if($validator->fails()) {
+			return Redirect::action('PostController@create')
+	            ->withErrors($validator)
+	            ->withInput($input);
+        } else {
+        	$data = Post::find($id);
+        	$input['image'] = CommonAdmin::uploadImage(UPLOADIMG_POST, 'image', $data->image);
+        	$input['meta_image'] = CommonAdmin::uploadImage(UPLOADIMG_POST, 'meta_image', $data->meta_image);
+        	if($input['start_date'] == '') {
+				$input['start_date'] = date('Y-m-d H:i:00');
+			}
+        	$data->update($input);
+    		return Redirect::action('PostController@index')->with('success', 'Đã lưu!');
+        }
 	}
 
 	/**
@@ -83,7 +129,11 @@ class PostController extends AdminController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$data = Post::find($id);
+		if($data) {
+			$data->delete();
+		}
+		return Redirect::action('PostController@index')->with('success', 'Đã xóa!');
 	}
 
 }

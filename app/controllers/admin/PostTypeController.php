@@ -9,8 +9,8 @@ class PostTypeController extends AdminController {
 	 */
 	public function index()
 	{
-		$data = PostType::orderBy('id', 'asc')->paginate(PAGINATE);
-		return View::make('admin.post.index')->with(compact('data'));
+		$data = PostType::orderBy('id', 'desc')->paginate(PAGINATE);
+		return View::make('admin.posttype.index')->with(compact('data'));
 	}
 
 	/**
@@ -20,7 +20,7 @@ class PostTypeController extends AdminController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('admin.posttype.create');
 	}
 
 	/**
@@ -30,7 +30,27 @@ class PostTypeController extends AdminController {
 	 */
 	public function store()
 	{
-		//
+		$rules = array(
+			'name'   => 'required|unique:post_types|unique:posts',
+			'slug'   => 'unique:post_types|unique:posts',
+		);
+		$input = Input::except('_token');
+		$inputSlug = convert_string_vi_to_en($input['name']);
+		$input['slug'] = strtolower(preg_replace('/[^a-zA-Z0-9]+/i','-', $inputSlug));
+		$validator = Validator::make($input,$rules);
+		if($validator->fails()) {
+			return Redirect::action('PostTypeController@create')
+	            ->withErrors($validator)
+	            ->withInput($input);
+        } else {
+        	$input['meta_image'] = CommonAdmin::uploadImage(UPLOADIMG_TYPE, 'meta_image');
+        	$id = PostType::create($input)->id;
+        	if($id) {
+        		return Redirect::action('PostTypeController@index')->with('success', 'Đã lưu!');
+        	} else {
+        		dd('Error');
+        	}
+        }
 	}
 
 
@@ -55,8 +75,7 @@ class PostTypeController extends AdminController {
 	public function edit($id)
 	{
 		$data = PostType::find($id);
-		$type = $data->type;
-        return View::make('admin.post.edit', array('data'=>$data, 'type'=>$type));
+        return View::make('admin.posttype.edit', array('data'=>$data));
 	}
 
 
@@ -68,11 +87,24 @@ class PostTypeController extends AdminController {
 	 */
 	public function update($id)
 	{
-        $input = Input::except('_token');
-        $data = PostType::find($id);
-    	$data->update($input);
-    	$type = $data->type;
-		return Redirect::action('PostTypeController@btype', $type)->with('message', 'Đã lưu!');
+		$rules = array(
+			'name'   => 'required|unique:post_types,name,'.$id.'|unique:posts',
+			'slug'   => 'unique:post_types,slug,'.$id.'|unique:posts',
+		);
+		$input = Input::except('_token');
+		$inputSlug = convert_string_vi_to_en($input['name']);
+		$input['slug'] = strtolower(preg_replace('/[^a-zA-Z0-9]+/i','-', $inputSlug));
+		$validator = Validator::make($input,$rules);
+		if($validator->fails()) {
+			return Redirect::action('PostTypeController@edit', $id)
+	            ->withErrors($validator)
+	            ->withInput($input);
+        } else {
+        	$data = PostType::find($id);
+        	$input['meta_image'] = CommonAdmin::uploadImage(UPLOADIMG_TYPE, 'meta_image', $data->meta_image);
+        	$data->update($input);
+    		return Redirect::action('PostTypeController@index')->with('success', 'Đã lưu!');
+        }
 	}
 
 	/**
@@ -83,7 +115,15 @@ class PostTypeController extends AdminController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$checkPost = Post::where('type', $id)->count();
+		if($checkPost > 0) {
+			return Redirect::action('PostTypeController@index')->with('warning', 'Không thể xóa do có bài viết');
+		}
+		$data = PostType::find($id);
+		if($data) {
+			$data->delete();
+		}
+        return Redirect::action('PostTypeController@index')->with('success', 'Đã xóa!');
 	}
 
 }

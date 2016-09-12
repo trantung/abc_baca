@@ -23,11 +23,10 @@ class CreatePostTbl extends Migration {
             $table->string('meta_description',1000);
             $table->string('meta_keyword',1000);
             $table->string('meta_image');
-            $table->integer('type')->default(1);
-            $table->integer('slide_id');
+            $table->integer('type');
+            $table->integer('gallery_id');
             $table->timestamp('start_date')->default(date('Y-m-d H:i:s'));
             $table->integer('status')->default(ACTIVE);
-            $table->softDeletes();
             $table->timestamps();
         });
 	}

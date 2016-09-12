@@ -68,7 +68,7 @@ class ConfigsiteController extends AdminController {
 	{
         $input = Input::except('_token');
     	Configsite::find($id)->update($input);
-		return Redirect::action('ConfigsiteController@edit', $id)->with('message', 'Đã lưu!');
+		return Redirect::action('ConfigsiteController@edit', $id)->with('success', 'Đã lưu!');
 	}
 
 	/**

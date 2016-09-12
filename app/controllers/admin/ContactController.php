@@ -1,6 +1,6 @@
 <?php
 
-class AdminContactController extends AdminController {
+class ContactController extends AdminController {
 
 	/**
 	 * Display a listing of the resource.
@@ -85,7 +85,7 @@ class AdminContactController extends AdminController {
 	public function destroy($id)
 	{
 		Contact::find($id)->delete();
-        return Redirect::action('AdminContactController@index');
+        return Redirect::action('ContactController@index')->with('success', 'Đã xóa!');
 	}
 
 }

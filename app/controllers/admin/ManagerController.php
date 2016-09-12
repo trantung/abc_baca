@@ -147,8 +147,11 @@ class ManagerController extends AdminController {
 	 */
 	public function destroy($id)
 	{
-		Admin::find($id)->delete();
-        return Redirect::action('ManagerController@index');
+		$data = Admin::find($id);
+		if($data) {
+			$data->delete();
+		}
+        return Redirect::action('ManagerController@index')->with('success', 'Đã xóa!');
 	}
 
 	public function changePassword($id){
@@ -179,7 +182,7 @@ class ManagerController extends AdminController {
         		$inputPass['password'] = Hash::make($input['password']);
         		Admin::find($id)->update($inputPass);
         }
-        return Redirect::action('ManagerController@changePassword', $id)->with('message', 'Đổi mật khẩu thành công!');
+        return Redirect::action('ManagerController@changePassword', $id)->with('success', 'Đổi mật khẩu thành công!');
 	}
 
 }

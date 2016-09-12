@@ -9,6 +9,5 @@
 	    protected $table = 'contacts';
 	    protected $fillable = ['name','email','phone','message'];
 	    protected $dates = ['deleted_at'];
-
 	}
 ?>

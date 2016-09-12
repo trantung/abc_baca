@@ -35,7 +35,7 @@
 							<td style="word-break: keep-all; width:300px; ">{{ $value->message }}</td>
 							<td>{{ $value->created_at }}</td>
 							<td>
-								{{ Form::open(array('method'=>'DELETE', 'action' => array('AdminContactController@destroy', $value->id), 'style' => 'display: inline-block;')) }}
+								{{ Form::open(array('method'=>'DELETE', 'action' => array('ContactController@destroy', $value->id), 'style' => 'display: inline-block;')) }}
 								<button class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa?');">Xóa</button>
 								{{ Form::close() }}
 							</td>

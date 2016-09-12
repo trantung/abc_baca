@@ -4,9 +4,9 @@
 		<!-- sidebar menu: : style can be found in sidebar.less -->
 		<ul class="sidebar-menu">
 			<li class="header">Menu</li>
-			<li><a href="#"><i class="fa fa-chevron-right"></i> <span>Quản lý bài viết</span></a></li>
+			<li><a href="{{ action('PostController@index') }}"><i class="fa fa-chevron-right"></i> <span>Quản lý bài viết</span></a></li>
 			<li><a href="#"><i class="fa fa-chevron-right"></i> <span>Quản lý slide bài viết</span></a></li>
-			<li><a href="#"><i class="fa fa-chevron-right"></i> <span>Quản lý thể loại bài viết</span></a></li>
+			<li><a href="{{ action('PostTypeController@index') }}"><i class="fa fa-chevron-right"></i> <span>Quản lý thể loại bài viết</span></a></li>
 			<li class="treeview">
 				<a href="#">
 					<i class="fa fa-list"></i> <span>Mục nổi bật trang chủ</span>
@@ -23,12 +23,12 @@
 					<i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li><a href="{{ action('SlideController@stype', SLIDE_PROJECT) }}"><i class="fa fa-circle-o"></i> slide bài viết</a></li>
+					<li><a href="{{ action('SlideController@create') }}"><i class="fa fa-circle-o"></i> Thêm slide</a></li>
 					<li><a href="{{ action('SlideController@stype', SLIDE_BANNER) }}"><i class="fa fa-circle-o"></i> Banner trang chủ</a></li>
 					<li><a href="{{ action('SlideController@stype', SLIDE_PARTNER) }}"><i class="fa fa-circle-o"></i> Logo đối tác</a></li>
 				</ul>
 			</li>
-			<li><a href="{{ action('AdminContactController@index') }}"><i class="fa fa-chevron-right"></i> <span>Quản lý liên hệ</span></a></li>
+			<li><a href="{{ action('ContactController@index') }}"><i class="fa fa-chevron-right"></i> <span>Quản lý liên hệ</span></a></li>
 			<li><a href="{{ action('ConfigsiteController@edit', 1) }}"><i class="fa fa-chevron-right"></i> <span>Cài đặt chung</span></a></li>
 			@if(Admin::isAdmin())
 			<li>

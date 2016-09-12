@@ -24,7 +24,6 @@ class CreatePostTypeTbl extends Migration {
             $table->string('meta_keyword',1000);
             $table->string('meta_image');
             $table->integer('status')->default(ACTIVE);
-            $table->softDeletes();
             $table->timestamps();
         });
 	}

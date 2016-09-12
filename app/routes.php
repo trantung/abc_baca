@@ -24,8 +24,8 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::get('/manager/search', array('uses' => 'ManagerController@search', 'as' => 'admin.manager.search'));
 	Route::resource('/manager', 'ManagerController');
 
-	Route::get('/contact/search', 'AdminContactController@search');
-	Route::resource('/contact', 'AdminContactController');
+	Route::get('/contact/search', 'ContactController@search');
+	Route::resource('/contact', 'ContactController');
 
 	Route::get('/slide/stype/{type}', 'SlideController@stype');
 	Route::resource('/slide', 'SlideController');
@@ -35,7 +35,9 @@ Route::group(['prefix' => 'admin'], function () {
 
 	Route::resource('/configsite', 'ConfigsiteController');
 
+	Route::get('/post/search', 'PostController@search');
 	Route::resource('/post', 'PostController');
+	Route::resource('/posttype', 'PostTypeController');
 
 });
 

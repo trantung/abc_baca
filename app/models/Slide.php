@@ -9,6 +9,5 @@
 	    protected $table = 'slides';
 	    protected $fillable = ['name','name2','summary','url','image','type','status'];
 	    protected $dates = ['deleted_at'];
-
 	}
 ?>

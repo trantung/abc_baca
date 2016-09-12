@@ -78,7 +78,7 @@ class BlockController extends AdminController {
         $data = Block::find($id);
     	$data->update($input);
     	$type = $data->type;
-		return Redirect::action('BlockController@btype', $type)->with('message', 'Đã lưu!');
+		return Redirect::action('BlockController@btype', $type)->with('success', 'Đã lưu!');
 	}
 
 	/**

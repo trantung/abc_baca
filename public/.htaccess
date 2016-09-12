@@ -16,8 +16,8 @@
 	# Chuyen www ve dang none w
 	Options +FollowSymLinks
 	RewriteBase /
-	RewriteCond %{HTTP_HOST} ^www.localhost$ [NC]
-	RewriteRule ^(.*)$ http://localhost/ [R=301,L]
+	RewriteCond %{HTTP_HOST} ^www.localhost:8000$ [NC]
+	RewriteRule ^(.*)$ http://localhost:8000/ [R=301,L]
 
 </IfModule>
 
