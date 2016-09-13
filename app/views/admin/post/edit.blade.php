@@ -10,6 +10,8 @@
 	<div class="col-xs-12">
 		<a href="{{ action('PostController@index') }}" class="btn btn-success">Danh sách</a>
 		<a href="{{ action('PostController@create') }}" class="btn btn-primary">Thêm bài viết</a>
+		<a href="{{ action('PostImageController@index2', $data->id) }}" class="btn btn-primary">Danh sách ảnh</a>
+		<a href="{{ action('PostImageController@create2', $data->id) }}" class="btn btn-primary">Thêm ảnh</a>
 	</div>
 </div>
 
@@ -43,15 +45,6 @@
 							</div>
 						</div>
 					</div>
-					<div class="form-group">
-						<label>Slide</label>
-						<div class="row">
-							<div class="col-sm-6">
-								{{ Form::select('gallery_id', Common::getSelectArray('Gallery', 1), $data->slide_id, array('class' =>'form-control')) }}
-							</div>
-						</div>
-					</div>
-					
 					<div class="form-group">
 						<label>Mô tả ngắn</label>
 						<div class="row">

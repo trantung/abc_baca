@@ -5,7 +5,6 @@
 		<ul class="sidebar-menu">
 			<li class="header">Menu</li>
 			<li><a href="{{ action('PostController@index') }}"><i class="fa fa-chevron-right"></i> <span>Quản lý bài viết</span></a></li>
-			<li><a href="#"><i class="fa fa-chevron-right"></i> <span>Quản lý slide bài viết</span></a></li>
 			<li><a href="{{ action('PostTypeController@index') }}"><i class="fa fa-chevron-right"></i> <span>Quản lý thể loại bài viết</span></a></li>
 			<li class="treeview">
 				<a href="#">

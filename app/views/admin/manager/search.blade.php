@@ -4,7 +4,7 @@
 			<label>Từ khóa</label>
 		  	<input type="text" name="keyword" class="form-control" placeholder="Search" />
 		</div>
-		<div class="input-group" style="width: 150px; display:inline-block;">
+		<div class="input-group" style="width: 150px; display:none;"> <!--inline-block-->
 			<label>Quyền hạn</label>
 		  	{{ Form::select('role_id', Common::selectRoleId(), null, array('class' =>'form-control')) }}
 		</div>

@@ -11,7 +11,6 @@ define('PAGINATION', 15);
 define('UPLOADIMG', '/images/');
 define('UPLOADIMG_POST', '/images/post/');
 define('UPLOADIMG_TYPE', '/images/type/');
-define('UPLOADIMG_GALLERY', '/images/gallery/');
 define('UPLOADIMG_SLIDE', '/images/slide/');
 //device
 define('MOBILE', 1);

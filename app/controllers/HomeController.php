@@ -2,6 +2,10 @@
 
 class HomeController extends BaseController {
 
+	public function __construct() {
+		//
+	}
+
 	/*
 	|--------------------------------------------------------------------------
 	| Default Home Controller

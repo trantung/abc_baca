@@ -38,10 +38,11 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::get('/post/search', 'PostController@search');
 	Route::resource('/post', 'PostController');
 	Route::resource('/posttype', 'PostTypeController');
+	Route::get('/postimage/{postId}', 'PostImageController@index2');
+	Route::get('/postimage/{postId}/create', 'PostImageController@create2');
+	Route::resource('/postimage', 'PostImageController');
 
 });
 
-Route::get('/sitemap.xml', 'SiteMapController@index');
-Route::resource('/sitemap', 'SiteMapController');
-
-Route::get('/', 'SiteIndexController@index');
+Route::get('/sitemap.xml', 'SiteController@sitemap');
+Route::get('/', 'SiteController@index');

@@ -43,14 +43,6 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label>Slide</label>
-						<div class="row">
-							<div class="col-sm-6">
-								{{ Form::select('gallery_id', Common::getSelectArray('Gallery', 1), '', array('class' =>'form-control')) }}
-							</div>
-						</div>
-					</div>
-					<div class="form-group">
 						<label>Mô tả ngắn</label>
 						<div class="row">
 							<div class="col-sm-6">

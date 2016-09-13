@@ -27,7 +27,7 @@
 				<tr>
 				  <th>ID</th>
 				  <th>Username</th>
-				  <th>Quyền hạn</th>
+				  <!-- <th>Quyền hạn</th> -->
 				  <th>Đăng nhập cuối</th>
 				  <th style="width:300px;">Action</th>
 				</tr>
@@ -35,7 +35,7 @@
 				<tr>
 				  <td>{{ $value->id }}</td>
 				  <td>{{ $value->username }}</td>
-				  <td>{{ Common::getRole($value->role_id) }}</td>
+				  <!-- <td>{{-- Common::getRole($value->role_id) --}}</td> -->
 				  <td>{{ $value->updated_at }}</td>
 				  <td>
 					<a href="{{action('ManagerController@changePassword', $value->id) }}" class="btn btn-primary">Đổi mật khẩu</a>

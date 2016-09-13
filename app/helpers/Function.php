@@ -182,3 +182,9 @@ function removeTagsHtml($text)
     $text = html_entity_decode($text);
     return $text;
 }
+function convertToSlug($string)
+{
+    $slug = convert_string_vi_to_en($string);
+    $rs = strtolower(preg_replace('/[^a-zA-Z0-9]+/i','-', $slug));
+    return $rs;
+}

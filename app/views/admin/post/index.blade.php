@@ -43,6 +43,8 @@
 								{{ Form::open(array('method'=>'DELETE', 'action' => array('PostController@destroy', $value->id), 'style' => 'display: inline-block;')) }}
 								<button class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa?');">Xóa</button>
 								{{ Form::close() }}
+								<a href="{{ action('PostImageController@index2', $value->id) }}" class="btn btn-primary">Ảnh</a>
+								<a href="{{ action('PostImageController@create2', $value->id) }}" class="btn btn-primary">Thêm ảnh</a>
 							</td>
 						</tr>
 						@endforeach

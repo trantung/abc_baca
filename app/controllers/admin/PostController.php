@@ -41,8 +41,7 @@ class PostController extends AdminController {
 			'slug'   => 'unique:posts|unique:post_types',
 		);
 		$input = Input::except('_token');
-		$inputSlug = convert_string_vi_to_en($input['name']);
-		$input['slug'] = strtolower(preg_replace('/[^a-zA-Z0-9]+/i','-', $inputSlug));
+		$input['slug'] = convertToSlug($input['name']);
 		$validator = Validator::make($input,$rules);
 		if($validator->fails()) {
 			return Redirect::action('PostController@create')
@@ -102,8 +101,7 @@ class PostController extends AdminController {
 			'slug'   => 'unique:posts,slug,'.$id.'|unique:post_types',
 		);
 		$input = Input::except('_token');
-		$inputSlug = convert_string_vi_to_en($input['name']);
-		$input['slug'] = strtolower(preg_replace('/[^a-zA-Z0-9]+/i','-', $inputSlug));
+		$input['slug'] = convertToSlug($input['name']);
 		$validator = Validator::make($input,$rules);
 		if($validator->fails()) {
 			return Redirect::action('PostController@create')
