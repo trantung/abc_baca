@@ -45,8 +45,13 @@
 					<div class="form-group">
 						<label>Nội dung</label>
 						<div class="row">
-							<div class="col-sm-6">
-								<textarea class="form-control" name="description" rows="6">{{ $data->description }}</textarea>
+							<div class="col-sm-10">
+								@if($data->id == 6)
+									<textarea class="form-control" name="description" id="editor1">{{ $data->description }}</textarea>
+									@include('admin.common.ckeditor')
+								@else
+									<textarea class="form-control" name="description" rows="6">{{ $data->description }}</textarea>
+								@endif
 							</div>
 						</div>
 					</div>

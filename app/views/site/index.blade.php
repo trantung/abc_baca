@@ -80,19 +80,19 @@
 	<div class="container">
 		<div class="row">
 			<div class="grid_4 wow fadeInLeft" data-wow-duration="" data-wow-delay="0.0s">
-				<h2>{{ $blocks[3]->name }} <br><span>{{ $blocks[3]->name2 }}</span></h2>
+				<h2 class="color262626">{{ $blocks[3]->name }} <br><span class="colorff8401">{{ $blocks[3]->name2 }}</span></h2>
 				{{ $blocks[3]->description }}
 				<a href="{{ url($blocks[3]->url) }}" class="more_btn2">Xem thêm</a>
 			</div>
 
 			<div class="grid_4 wow fadeInUp" data-wow-duration="" data-wow-delay="0.3s">
-				<h2>{{ $blocks[4]->name }} <br><span>{{ $blocks[4]->name2 }}</span></h2>
+				<h2 class="color262626">{{ $blocks[4]->name }} <br><span class="colorff8401">{{ $blocks[4]->name2 }}</span></h2>
 				{{ $blocks[4]->description }}
 				<a href="{{ url($blocks[4]->url) }}" class="more_btn2">Xem thêm</a>
 			</div>
 
 			<div class="grid_4 wow fadeInRight listWithMarker" data-wow-duration="" data-wow-delay="0.6s">
-				<h2><span>{{ $blocks[5]->name }}</span><br>{{ $blocks[5]->name2 }}</h2>
+				<h2 class="colorff8401"><span class="color262626">{{ $blocks[5]->name }}</span><br>{{ $blocks[5]->name2 }}</h2>
 				{{ $blocks[5]->description }}
 				<a href="{{ url($blocks[5]->url) }}" class="more_btn2">Xem thêm</a>
 			</div>

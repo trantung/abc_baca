@@ -38,11 +38,14 @@
 
 </script>
 
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="/assets/css/swiper.min.css">
 <!-- Swiper JS -->
 <script src="/assets/js/swiper.jquery.min.js"></script>
 <!-- Initialize Swiper -->
 <script>
 var swiper = new Swiper('.swiper-container', {
+	slidesPerView: 5,
 	nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
     spaceBetween: 0
