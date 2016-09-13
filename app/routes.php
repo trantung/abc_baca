@@ -45,4 +45,6 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('/sitemap.xml', 'SiteController@sitemap');
+Route::get('/dat-hang', 'SiteController@order');
+Route::get('/lien-he', 'SiteController@contact');
 Route::get('/', 'SiteController@index');

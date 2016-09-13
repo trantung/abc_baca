@@ -22,9 +22,12 @@
 		});
 	</script>
 	@if(isset($pageContact))
-	<link rel="stylesheet" href="/css/contact-form.css">
-	<script src="/js/TMForm.js"></script>
-	<script src="/js/modal.js"></script>
+	<link rel="stylesheet" href="/assets/css/contact-form.css">
+	<script src="/assets/js/TMForm.js"></script>
+	<script src="/assets/js/modal.js"></script>
+	@endif
+	@if(isset($pageOrder))
+	<link rel="stylesheet" href="/assets/booking/css/booking.css">
 	@endif
 	<!--<![endif]-->
 	<!--[if lt IE 8]>

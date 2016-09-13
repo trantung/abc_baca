@@ -46,12 +46,7 @@
 						<label>Nội dung</label>
 						<div class="row">
 							<div class="col-sm-10">
-								@if($data->id == 6)
-									<textarea class="form-control" name="description" id="editor1">{{ $data->description }}</textarea>
-									@include('admin.common.ckeditor')
-								@else
-									<textarea class="form-control" name="description" rows="6">{{ $data->description }}</textarea>
-								@endif
+								<textarea class="form-control" name="description" id="editor1">{{ $data->description }}</textarea>
 							</div>
 						</div>
 					</div>
@@ -67,5 +62,7 @@
 		<!-- /.box -->
 	</div>
 </div>
+
+@include('admin.common.ckeditor')
 
 @stop

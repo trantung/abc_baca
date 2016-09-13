@@ -24,7 +24,7 @@
 						<label>meta_description</label>
 						<div class="row">
 							<div class="col-sm-6">
-								<textarea class="form-control" name="meta_description" rows="4">{{ $data->meta_description }}</textarea>
+								<textarea class="form-control" name="meta_description" rows="6">{{ $data->meta_description }}</textarea>
 							</div>
 						</div>
 					</div>
@@ -32,7 +32,7 @@
 						<label>meta_keyword</label>
 						<div class="row">
 							<div class="col-sm-6">
-								<textarea class="form-control" name="meta_keyword" rows="4">{{ $data->meta_keyword }}</textarea>
+								<textarea class="form-control" name="meta_keyword" rows="6">{{ $data->meta_keyword }}</textarea>
 							</div>
 						</div>
 					</div>
@@ -40,7 +40,7 @@
 						<label>Google Analytics Code</label>
 						<div class="row">
 							<div class="col-sm-6">
-								<textarea class="form-control" name="code" rows="4">{{ $data->code }}</textarea>
+								<textarea class="form-control" name="code" rows="6">{{ $data->code }}</textarea>
 							</div>
 						</div>
 					</div>
@@ -72,15 +72,15 @@
 						<label>Thông tin công ty cuối trang</label>
 						<div class="row">
 							<div class="col-sm-6">
-								<textarea class="form-control" name="company_information" rows="4">{{ $data->company_information }}</textarea>
+								<textarea class="form-control" name="company_information" rows="6">{{ $data->company_information }}</textarea>
 							</div>
 						</div>
 					</div>
 					<div class="form-group">
 						<label>Thông tin liên hệ trang liên hệ</label>
 						<div class="row">
-							<div class="col-sm-6">
-								<textarea class="form-control" name="company_contact" rows="4">{{ $data->company_contact }}</textarea>
+							<div class="col-sm-10">
+								<textarea class="form-control" name="company_contact" id="editor1">{{ $data->company_contact }}</textarea>
 							</div>
 						</div>
 					</div>
@@ -88,7 +88,7 @@
 						<label>Google Map code</label>
 						<div class="row">
 							<div class="col-sm-6">
-								<textarea class="form-control" name="map" rows="4">{{ $data->map }}</textarea>
+								<textarea class="form-control" name="map" rows="6">{{ $data->map }}</textarea>
 							</div>
 						</div>
 					</div>
@@ -104,5 +104,7 @@
 		<!-- /.box -->
 	</div>
 </div>
+
+@include('admin.common.ckeditor')
 
 @stop

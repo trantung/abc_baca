@@ -19,4 +19,20 @@ class SiteController extends HomeController {
         return Response::make($content)->header('Content-Type', 'text/xml;charset=utf-8');
 	}
 
+	public function contact()
+	{
+		$configSite = Configsite::first();
+		return View::make('site.contact')->with(compact('configSite'));
+	}
+
+	public function sendContact()
+	{
+		$input = Input::except('_token');
+		dd($input);
+	}
+
+	public function order()
+	{
+		return View::make('site.order');
+	}
 }
