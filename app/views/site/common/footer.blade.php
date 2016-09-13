@@ -37,4 +37,16 @@
 	 });
 
 </script>
+
+<!-- Swiper JS -->
+<script src="/assets/js/swiper.jquery.min.js"></script>
+<!-- Initialize Swiper -->
+<script>
+var swiper = new Swiper('.swiper-container', {
+	nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    spaceBetween: 0
+});
+</script>
+
 @endif

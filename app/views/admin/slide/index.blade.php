@@ -33,8 +33,8 @@
 						</tr>
 						@foreach($data as $key => $value)
 						<tr>
-							<td><img src="{{ $value->image }}" style="width:70px; max-height: 70px;" /></td>
 							<td>{{ $value->id }}</td>
+							<td><img src="{{ $value->image }}" style="width:70px; max-height: 70px;" /></td>
 							<td>{{ $value->name }}</td>
 							<td>{{ $value->name2 }}</td>
 							<td>{{ Common::labelSlide($value->type) }}</td>

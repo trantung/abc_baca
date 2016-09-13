@@ -231,7 +231,18 @@
 	@if(count($partners) > 0)
 	<div class="partner">
 		<h3 class="box-title-center">Đối tác chiến lược</h3>
-		
+		<!-- Swiper -->
+	    <div class="swiper-container">
+	        <div class="swiper-wrapper">
+	        	@foreach($partners as $value)
+	            <div class="swiper-slide"><img src="{{ url($value->image) }}"></div>
+	            @endforeach
+	        </div>
+	        <!-- Add Arrows -->
+	        <div class="swiper-button-next"></div>
+	        <div class="swiper-button-prev"></div>
+	    </div>
+
 	</div>
 	@endif
 
