@@ -45,6 +45,7 @@ class PostTypeController extends AdminController {
         	$input['meta_image'] = CommonAdmin::uploadImage(UPLOADIMG_TYPE, 'meta_image');
         	$id = PostType::create($input)->id;
         	if($id) {
+        		Cache::flush();
         		return Redirect::action('PostTypeController@index')->with('success', 'Đã lưu!');
         	} else {
         		dd('Error');
@@ -101,6 +102,7 @@ class PostTypeController extends AdminController {
         	$data = PostType::find($id);
         	$input['meta_image'] = CommonAdmin::uploadImage(UPLOADIMG_TYPE, 'meta_image', $data->meta_image);
         	$data->update($input);
+        	Cache::flush();
     		return Redirect::action('PostTypeController@index')->with('success', 'Đã lưu!');
         }
 	}
@@ -119,6 +121,7 @@ class PostTypeController extends AdminController {
 		}
 		$data = PostType::find($id);
 		if($data) {
+			Cache::flush();
 			$data->delete();
 		}
         return Redirect::action('PostTypeController@index')->with('success', 'Đã xóa!');

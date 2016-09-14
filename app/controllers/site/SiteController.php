@@ -4,6 +4,13 @@ class SiteController extends HomeController {
 
 	public function index()
 	{
+		//cache name
+        $cacheName = 'index';
+        //get cache
+        if(Cache::has($cacheName)) {
+            return Cache::get($cacheName);
+        }
+
 		$configSite = Configsite::first();
 		$banners = Slide::where('type', SLIDE_BANNER)->get();
 		$partners = Slide::where('type', SLIDE_PARTNER)->get();
@@ -11,12 +18,25 @@ class SiteController extends HomeController {
 		$posts = Post::where('type', 1)
 				->where('start_date', '<=', date('Y-m-d H:i:s'))
 				->where('status', ACTIVE)
+				->orderBy('start_date', 'desc')
 				->take(6)->get();
-		return View::make('site.index')->with(compact('configSite', 'banners', 'partners', 'blocks', 'posts'));
+		//put cache
+        $html = View::make('site.index')->with(compact('configSite', 'banners', 'partners', 'blocks', 'posts'))->render();
+        Cache::forever($cacheName, $html);
+        //return view
+        return View::make('site.index')->with(compact('configSite', 'banners', 'partners', 'blocks', 'posts'));
 	}
 
 	public function slug($slug)
 	{
+		//check page
+        $page = (Input::get('page'))?Input::get('page'):1;
+        //cache name
+        $cacheName = $slug.'_'.$page;
+        //get cache
+        if(Cache::has($cacheName)) {
+            return Cache::get($cacheName);
+        }
 		//type
 		$type = PostType::where('slug', $slug)->first();
 		if(isset($type)) {
@@ -25,7 +45,11 @@ class SiteController extends HomeController {
 				->where('status', ACTIVE)
 				->orderBy('start_date', 'desc')
 				->paginate(PAGINATION);
-			return View::make('site.type')->with(compact('type', 'posts'));
+			//put cache
+	        $html = View::make('site.type')->with(compact('type', 'posts'))->render();
+	        Cache::forever($cacheName, $html);
+	        //return view
+	        return View::make('site.type')->with(compact('type', 'posts'));
 		}
 		//post
 		$post = Post::where('slug', $slug)
@@ -34,7 +58,11 @@ class SiteController extends HomeController {
 			->first();
 		if(isset($post)) {
 			$images = PostImage::where('post_id', $post->id)->get();
-			return View::make('site.post')->with(compact('post', 'images'));
+			//put cache
+	        $html = View::make('site.post')->with(compact('post', 'images'))->render();
+	        Cache::forever($cacheName, $html);
+	        //return view
+	        return View::make('site.post')->with(compact('post', 'images'));
 		}
 		return Response::view('site.404', [], 404);
 	}

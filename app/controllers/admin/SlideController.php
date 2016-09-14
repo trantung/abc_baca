@@ -41,6 +41,7 @@ class SlideController extends AdminController {
     	$id = Slide::create($input)->id;
     	if($id) {
     		$type = Slide::find($id)->type;
+    		Cache::flush();
     		return Redirect::action('SlideController@stype', $type)->with('success', 'Đã lưu!');
     	} else {
     		return Redirect::action('SlideController@create')->with('warning', 'Chưa lưu!');
@@ -86,6 +87,7 @@ class SlideController extends AdminController {
     	$input['image'] = CommonAdmin::uploadImage(UPLOADIMG_SLIDE, 'image', $data->image);
     	$data->update($input);
     	$type = Slide::find($id)->type;
+    	Cache::flush();
 		return Redirect::action('SlideController@stype', $type)->with('success', 'Đã lưu!');
 	}
 
@@ -100,6 +102,7 @@ class SlideController extends AdminController {
 		$data = Slide::find($id);
 		$type = $data->type;
 		if($data) {
+			Cache::flush();
 			$data->delete();
 		}
         return Redirect::action('SlideController@stype', $type)->with('success', 'Đã xóa!');

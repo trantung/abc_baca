@@ -7,6 +7,7 @@
 		$meta_image = $post->meta_image;
 	}
 	$extendData = array(
+			'pagePost' => 1,
 			'meta_title' => $meta_title,
 			'meta_keyword' => $meta_keyword,
 			'meta_description' => $meta_description,
@@ -28,7 +29,17 @@
 		<h1 class="txt3 color4 marTop9 marBot3">{{ $post->name }}</h1>
 		
 		@if(count($images) > 0)
-			
+		<div class="post-images">
+			<div class="row">
+				@foreach($images as $value)
+				<div class="grid_2">
+					<a class="fancybox-button" rel="fancybox-button" href="{{ $value->image }}">
+						<img src="{{ $value->image }}" alt="" />
+					</a>
+				</div>
+				@endforeach
+			</div>
+		</div>
 		@endif
 
 		<p class="marBot3">{{ $post->summary }}</p>

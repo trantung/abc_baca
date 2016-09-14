@@ -22,19 +22,19 @@
 
 <script type="text/javascript">
 
-	$(document).ready(function(){
-		jQuery('#camera_wrap').camera({
-				loader: false,
-				pagination: false,
-				thumbnails: false,
-				height: '37.03125%',
-				fx: 'curtainBottomLeft',
-				rows: '3',
-				slicedCols: '3',
-				slicedRows: '3',
-				caption: false
-			});
-	 });
+$(document).ready(function(){
+	jQuery('#camera_wrap').camera({
+			loader: false,
+			pagination: false,
+			thumbnails: false,
+			height: '37.03125%',
+			fx: 'curtainBottomLeft',
+			rows: '3',
+			slicedCols: '3',
+			slicedRows: '3',
+			caption: false
+		});
+ });
 
 </script>
 
@@ -56,10 +56,26 @@ var swiper = new Swiper('.swiper-container', {
 
 @if(isset($pageOrder))
 <script type="text/javascript">
-	 $(function (){
-			$('#bookingForm').bookingForm({
-					ownerEmail: '#'
-			});
-		})
+ $(function (){
+		$('#bookingForm').bookingForm({
+				ownerEmail: '#'
+		});
+	})
+</script>
+@endif
+
+@if(isset($pagePost))
+<script type="text/javascript">
+$(document).ready(function() {
+	$(".fancybox-button").fancybox({
+		prevEffect		: 'none',
+		nextEffect		: 'none',
+		closeBtn		: false,
+		helpers		: {
+			title	: { type : 'inside' },
+			buttons	: {}
+		}
+	});
+});
 </script>
 @endif

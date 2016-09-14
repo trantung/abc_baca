@@ -1258,3 +1258,12 @@ a.magnifier2 .zoom {
 	background: #ff8401;
 	color: #fff;
 }
+
+.post-images {
+	margin-bottom: 20px;
+}
+.post-images a img {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+}

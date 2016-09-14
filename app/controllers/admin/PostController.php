@@ -55,6 +55,7 @@ class PostController extends AdminController {
 			}
         	$id = Post::create($input)->id;
         	if($id) {
+        		Cache::flush();
         		return Redirect::action('PostController@index')->with('success', 'Đã lưu!');
         	} else {
         		dd('Error');
@@ -115,6 +116,7 @@ class PostController extends AdminController {
 				$input['start_date'] = date('Y-m-d H:i:00');
 			}
         	$data->update($input);
+        	Cache::flush();
     		return Redirect::action('PostController@index')->with('success', 'Đã lưu!');
         }
 	}
@@ -129,6 +131,7 @@ class PostController extends AdminController {
 	{
 		$data = Post::find($id);
 		if($data) {
+			Cache::flush();
 			$data->delete();
 		}
 		return Redirect::action('PostController@index')->with('success', 'Đã xóa!');

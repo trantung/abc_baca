@@ -50,6 +50,12 @@
 	<link rel="stylesheet" href="/assets/booking/css/booking.css">
 	<script src="/assets/booking/js/booking.js"></script>
 	@endif
+	@if(isset($pagePost))
+	<link rel="stylesheet" href="/assets/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+	<script type="text/javascript" src="/assets/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+	<link rel="stylesheet" href="/assets/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+	<script type="text/javascript" src="/assets/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+	@endif
 	<!--<![endif]-->
 	<!--[if lt IE 8]>
   	<div id="ie6-alert" style="width: 100%; text-align:center;">

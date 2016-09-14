@@ -34,6 +34,7 @@ class PostImageController extends AdminController {
     	$input['image'] = CommonAdmin::uploadImage(UPLOADIMG_POST.$input['post_id'].'/', 'image');
     	$id = PostImage::create($input)->id;
     	if($id) {
+    		Cache::flush();
     		return Redirect::action('PostImageController@index2', $input['post_id'])->with('success', 'Đã lưu!');
     	} else {
     		return Redirect::action('PostImageController@create2', $input['post_id'])->with('warning', 'Chưa lưu!');
@@ -79,6 +80,7 @@ class PostImageController extends AdminController {
     	$input['image'] = CommonAdmin::uploadImage(UPLOADIMG_POST.$data->post_id.'/', 'image', $data->image);
     	$input['post_id'] = $data->post_id;
     	$data->update($input);
+    	Cache::flush();
 		return Redirect::action('PostImageController@index2', $data->post_id)->with('success', 'Đã lưu!');
 	}
 
@@ -93,6 +95,7 @@ class PostImageController extends AdminController {
 		$data = PostImage::find($id);
 		$postId = $data->post_id;
 		if($data) {
+			Cache::flush();
 			$data->delete();
 		}
         return Redirect::action('PostImageController@index2', $postId)->with('success', 'Đã xóa!');
