@@ -1260,7 +1260,11 @@ a.magnifier2 .zoom {
 }
 
 .post-images {
+	
+}
+.post-images a {
 	margin-bottom: 20px;
+	display: block;
 }
 .post-images a img {
 	width: 100%;
