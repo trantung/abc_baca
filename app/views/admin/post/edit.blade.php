@@ -75,7 +75,7 @@
 					<div class="form-group">
 						<label>Trạng thái</label>
 						<div class="row">
-							<div class="col-sm-8">
+							<div class="col-sm-6">
 								{{ Form::select('status', Common::selectStatus(), $data->status, array('class' =>'form-control')) }}
 							</div>
 						</div>

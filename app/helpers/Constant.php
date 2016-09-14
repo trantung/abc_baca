@@ -6,7 +6,7 @@ define('SEO', 3);
 //pagination manager admin
 define('PAGINATE', 20);
 //pagination frontend
-define('PAGINATION', 15);
+define('PAGINATION', 6);
 //url upload img
 define('UPLOADIMG', '/images/');
 define('UPLOADIMG_POST', '/images/post/');

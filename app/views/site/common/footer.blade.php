@@ -53,3 +53,13 @@ var swiper = new Swiper('.swiper-container', {
 </script>
 
 @endif
+
+@if(isset($pageOrder))
+<script type="text/javascript">
+	 $(function (){
+			$('#bookingForm').bookingForm({
+					ownerEmail: '#'
+			});
+		})
+</script>
+@endif

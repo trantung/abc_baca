@@ -6,7 +6,7 @@
         <priority>1</priority>
     </url>
 
-	@if($postTypes)
+	@if(isset($postTypes))
     @foreach($postTypes as $value)
     <url>
     	<loc>{{ url($value->slug) }}</loc>
@@ -16,7 +16,7 @@
     @endforeach
     @endif
 
-	@if($posts)
+	@if(isset($posts))
     @foreach($posts as $value)
     <url>
     	<loc>{{ url($value->slug) }}</loc>

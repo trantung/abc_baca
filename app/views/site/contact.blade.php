@@ -1,8 +1,6 @@
 @extends('site.layout.default', array('pageContact'=>1))
 
-@section('title')
-    {{ $title = 'Liên hệ' }}
-@stop
+@section('title', 'Liên hệ')
 
 @section('content')
 
@@ -32,49 +30,34 @@
 			<div class="grid_6">
 				<p class="txt4 color4 marTop9">Gửi<br><span class="colorff8401">Liên hệ</span></p>
 
-				<form id="contact-form">
+				<form id="contact-form" method="post" action="/lien-he">
 					<div class="contact-form-loader"></div>
+					@include('message')
 					<fieldset>
 						<label class="name">
-							<input type="text" name="name" placeholder="Họ tên" value="" data-constraints="@Required @JustLetters"  />
+							<input type="text" name="name" placeholder="Họ tên" value="" required="" />
 							<span class="empty-message">Trường có dấu * là bắt buộc.</span>
-							<span class="error-message">*This is not a valid name.</span>
 						</label>
 					 
 						<label class="email">
-							<input type="text" name="email" placeholder="E-mail" value="" data-constraints="@Required @Email" />
+							<input type="email" name="email" placeholder="E-mail" value="" required="" />
 							<span class="empty-message">Trường có dấu * là bắt buộc.</span>
-							<span class="error-message">*This is not a valid email.</span>
 						</label>
 						<label class="phone">
-							<input type="text" name="phone" placeholder="Điện thoại" value="" data-constraints="@Required @JustNumbers" />
+							<input type="text" name="phone" placeholder="Điện thoại" value="" required="" />
 							<span class="empty-message">Trường có dấu * là bắt buộc.</span>
-							<span class="error-message">*This is not a valid phone.</span>
 						</label>
 					 
 						<label class="message">
-							<textarea name="message" placeholder="Tin nhắn" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
+							<textarea name="message" placeholder="Tin nhắn" required=""></textarea>
 							<span class="empty-message">Trường có dấu * là bắt buộc.</span>
-							<span class="error-message">*The message is too short.</span>
 						</label>
 						<div class="btns">
 							<!-- <a href="#" class="more_btn" data-type="reset">Clear</a> -->
-							<a href="#" class="more_btn3" data-type="submit">Gửi</a>
+							<!-- <a href="#" class="more_btn3" data-type="submit">Gửi</a> -->
+							<input type="submit" value="Gửi" class="more_btn3">
 						</div>
 					</fieldset> 
-					<div class="modal fade response-message">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-									<h4 class="modal-title">Modal title</h4>
-								</div>
-								<div class="modal-body">
-									You message has been sent! We will be in touch soon.
-								</div>      
-							</div>
-						</div>
-					</div>
 				</form>
 
 			</div>

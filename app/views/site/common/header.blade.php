@@ -2,6 +2,28 @@
 	<title>@yield('title')</title>
 	<meta charset="utf-8">
 	<meta name = "format-detection" content = "telephone=no" />
+	<meta http-equiv="Content-language" content="vi">
+	<meta name="revisit-after" content="1 days" />
+	<meta name="robots" content="noodp,index,follow" />
+	<meta name="language" content="vietnamese" />
+	<meta name="distribution" content="global">
+	@if(!empty($meta_title))
+	<meta name="title" content="{{ $meta_title }}">
+	@endif
+	@if(!empty($meta_keyword))
+	<meta name="keywords" content="{{ $meta_keyword }}">
+	@endif
+	@if(!empty($meta_description))
+	<meta name="description" content="{{ $meta_description }}">
+	@endif
+	@if(!empty($meta_title) && !empty($meta_keyword))
+	<meta property="og:url" content="{{ URL::current() }}" />
+	<meta property="og:title" content="{{ $meta_title }}" />
+	<meta property="og:description" content="{{ $meta_description }}" />
+	@endif
+	@if(!empty($meta_image))
+	<meta property="og:image" content="{{ url($meta_image) }}" />
+	@endif
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="/assets/css/grid.css">
 	<link rel="stylesheet" href="/assets/css/style.css">
@@ -23,11 +45,10 @@
 	</script>
 	@if(isset($pageContact))
 	<link rel="stylesheet" href="/assets/css/contact-form.css">
-	<script src="/assets/js/TMForm.js"></script>
-	<script src="/assets/js/modal.js"></script>
 	@endif
 	@if(isset($pageOrder))
 	<link rel="stylesheet" href="/assets/booking/css/booking.css">
+	<script src="/assets/booking/js/booking.js"></script>
 	@endif
 	<!--<![endif]-->
 	<!--[if lt IE 8]>

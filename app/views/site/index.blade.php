@@ -1,8 +1,22 @@
-@extends('site.layout.default', array('pageHome'=>1))
+<?php 
+	if(isset($configSite)) {
+		$title = ($configSite->meta_title)?$configSite->meta_title:'Trang chủ';
+		$meta_title = $configSite->meta_title;
+		$meta_keyword = $configSite->meta_keyword;
+		$meta_description = $configSite->meta_description;
+		$meta_image = $configSite->meta_image;
+	}
+	$extendData = array(
+			'pageHome'=>1,
+			'meta_title' => $meta_title,
+			'meta_keyword' => $meta_keyword,
+			'meta_description' => $meta_description,
+			'meta_image' => $meta_image,
+		);
+?>
+@extends('site.layout.default', $extendData)
 
-@section('title')
-    {{ $title = 'Trang chủ' }}
-@stop
+@section('title', 'Trang chủ')
 
 @section('content')
 	
@@ -103,128 +117,24 @@
 
 	<div class="box-2 custom-box-2">
 		<h3 class="box-title-center">Các dự án phân phối</h3>
-		<div class="wrapper marTop6  wow fadeInUp">
-
-			<figure class="figure1">
-				<a href="/assets/images/project_big_pic1.jpg" class="magnifier2" >
-					<img src="/assets/images/project_small_pic1.jpg" alt="">
-					<span class="zoom">
-						<span class="descr_txt">
-							<span class="txt1">$ 1,889.899</span>
-							<span class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit.</span>
-						</span>
-					</span>
-				</a>
-			</figure>
-
-			<figure class="figure1">
-				<a href="/assets/images/project_big_pic2.jpg" class="magnifier2" >
-					<img src="/assets/images/project_small_pic2.jpg" alt="">
-					<span class="zoom">
-						<span class="descr_txt">
-							<span class="txt1">$ 1,889.899</span>
-							<span class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit.</span>
-						</span>
-					</span>
-				</a>
-			</figure>
-
-			<figure class="figure1">
-				<a href="/assets/images/project_big_pic3.jpg" class="magnifier2" >
-					<img src="/assets/images/project_small_pic3.jpg" alt="">
-					<span class="zoom">
-						<span class="descr_txt">
-							<span class="txt1">$ 1,889.899</span>
-							<span class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit.</span>
-						</span>
-					</span>
-				</a>
-			</figure>
-
-			<figure class="figure1">
-				<a href="/assets/images/project_big_pic4.jpg" class="magnifier2" >
-					<img src="/assets/images/project_small_pic4.jpg" alt="">
-					<span class="zoom">
-						<span class="descr_txt">
-							<span class="txt1">$ 1,889.899</span>
-							<span class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit.</span>
-						</span>
-					</span>
-				</a>
-			</figure>
-
-			<figure class="figure1">
-				<a href="/assets/images/project_big_pic5.jpg" class="magnifier2" >
-					<img src="/assets/images/project_small_pic5.jpg" alt="">
-					<span class="zoom">
-						<span class="descr_txt">
-							<span class="txt1">$ 1,889.899</span>
-							<span class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit.</span>
-						</span>
-					</span>
-				</a>
-			</figure>
-
-			<figure class="figure1">
-				<a href="/assets/images/project_big_pic6.jpg" class="magnifier2" >
-					<img src="/assets/images/project_small_pic6.jpg" alt="">
-					<span class="zoom">
-						<span class="descr_txt">
-							<span class="txt1">$ 1,889.899</span>
-							<span class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit.</span>
-						</span>
-					</span>
-				</a>
-			</figure>
-
-			<figure class="figure1">
-				<a href="/assets/images/project_big_pic7.jpg" class="magnifier2" >
-					<img src="/assets/images/project_small_pic7.jpg" alt="">
-					<span class="zoom">
-						<span class="descr_txt">
-							<span class="txt1">$ 1,889.899</span>
-							<span class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit.</span>
-						</span>
-					</span>
-				</a>
-			</figure>
-
-			<figure class="figure1">
-				<a href="/assets/images/project_big_pic8.jpg" class="magnifier2" >
-					<img src="/assets/images/project_small_pic8.jpg" alt="">
-					<span class="zoom">
-						<span class="descr_txt">
-							<span class="txt1">$ 1,889.899</span>
-							<span class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit.</span>
-						</span>
-					</span>
-				</a>
-			</figure>
-
-			<figure class="figure1">
-				<a href="/assets/images/project_big_pic9.jpg" class="magnifier2" >
-					<img src="/assets/images/project_small_pic9.jpg" alt="">
-					<span class="zoom">
-						<span class="descr_txt">
-							<span class="txt1">$ 1,889.899</span>
-							<span class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit.</span>
-						</span>
-					</span>
-				</a>
-			</figure>
-
-			<figure class="figure1">
-				<a href="/assets/images/project_big_pic10.jpg" class="magnifier2" >
-					<img src="/assets/images/project_small_pic10.jpg" alt="">
-					<span class="zoom">
-						<span class="descr_txt">
-							<span class="txt1">$ 1,889.899</span>
-							<span class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit.</span>
-						</span>
-					</span>
-				</a>
-			</figure>
-
+		<div class="container">
+			<div class="row">
+				@if(count($posts) > 0)
+				@foreach($posts as $value)
+				<div class="grid_4">
+					<div class="post-item">
+						<a href="{{ url($value->slug) }}">
+							<img src="{{ url($value->image) }}">
+							<div class="post-label">
+								<span>{{ $value->name }}</span>
+							</div>
+						</a>
+					</div>
+				</div>
+				@endforeach
+				@endif
+			</div>
+			<div class="pj-seemore"><a href="/du-an">Xem thêm</a></div>
 		</div>
 	</div>
 

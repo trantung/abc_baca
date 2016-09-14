@@ -1,8 +1,6 @@
 @extends('site.layout.default', array('pageOrder'=>1))
 
-@section('title')
-    {{ $title = 'Đặt hàng' }}
-@stop
+@section('title', 'Đặt hàng')
 
 @section('content')
 
@@ -12,12 +10,12 @@
 <section id="content">
 
 	<div class="container">
-		<p class="txt4 color4 marTop9">Order<br><span>online</span></p>
+		<p class="txt4 color4 marTop9">Đặt hàng<br><span>online</span></p>
 		<h3>Hendreritivamus eget nibh vel metus Etiam cursus leo psum Nulla facilisii primis nec laoreet Aenean nec eros luctus Vestibulum ante faucibus </h3>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Su spendisse non lacus at quam iaculis pharetra. Maecenas te mpus neque at ligula lobortis, sit amet mollis tellus vehicu la. Qui sque et leo hendrerit diam porta auctor. Mauris ac libero sed lorem vulputate cursus in quis velit. Vestibulum vitae metus eu ante commodo interdum sed ut enim. Vestibulum a purus sce lerisque tortor dapibus sagittis a ultrices metusauris tempus volutpat tortor, eu volutpat velit cursus vitae. Vestibulum eget ex in elit feugiat </p>
 
 
-		<form id="bookingForm">
+		<form id="bookingForm" method="post">
 
 			<div class="wrapper2 form_marTop1">
 				<div class="row">
@@ -280,7 +278,8 @@
 							</div>
 						</div>
 
-						<a href="#" class="more_btn3 v2 fright" data-type="submit">send</a>
+						<!-- <a href="#" class="more_btn3 v2 fright" data-type="submit">Gửi</a> -->
+						<input class="more_btn3 v2 fright" type="submit" value="Gửi">
 					</div>
 
 				</div>

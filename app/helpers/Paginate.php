@@ -4,22 +4,22 @@ class Paginate extends Illuminate\Pagination\BootstrapPresenter {
 
 	public function getActivePageWrapper($text)
 	{
-		return '<li class="current pure-menu-item pagination-button"><a href="" class="pure-menu-link pure-button pure-button-disabled">'.$text.'</a></li>';
+		return '<li class="current"><a href="">'.$text.'</a></li>';
 	}
 
 	public function getDisabledTextWrapper($text)
 	{
-		return '<li class="unavailable pure-menu-item pagination-button"><a href="" class="pure-menu-link pure-button-disabled">'.$text.'</a></li>';
+		return '<li class=""><a href="" class="">'.$text.'</a></li>';
 	}
 
 	public function getNormalTextWrapper($text)
 	{
-		return '<li class="unavailable pure-menu-item pagination-button"><a href="" class="pure-menu-link">'.$text.'</a></li>';
+		return '<li class=""><a href="" class="">'.$text.'</a></li>';
 	}
 
 	public function getPageLinkWrapper($url, $page, $rel = null)
 	{
-		return '<li class="pure-menu-item pagination-button"><a href="'.$url.'" class="pure-menu-link pure-button">'.$page.'</a></li>';
+		return '<li class=""><a href="'.$url.'" class="">'.$page.'</a></li>';
 	}
 	
 	public function render()
