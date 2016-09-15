@@ -21,6 +21,8 @@
 				<div class="box-body">
 					<div class="form-group">
 						<label>Ảnh</label>
+						<p>Ảnh banner: 1920x711</p>
+						<p>Ảnh slide: 200x100</p>
 						<div class="row">
 							<div class="col-sm-6">
 								{{ Form::file('image') }}

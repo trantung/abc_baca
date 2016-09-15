@@ -60,6 +60,7 @@
 					</div>
 					<div class="form-group">
 						<label>Ảnh</label>
+						<p>Kích cỡ: 380x260</p>
 						<div class="row">
 							<div class="col-sm-6">
 								{{ Form::file('image') }}

@@ -52,6 +52,17 @@ return array(
 			'prefix'   => '',
 		),
 
+		// 'mysql' => array(
+		// 	'driver'    => 'mysql',
+		// 	'host'      => 'localhost',
+		// 	'database'  => 'u823973966_db',
+		// 	'username'  => 'u823973966_us',
+		// 	'password'  => 'Qv3n2qksYA',
+		// 	'charset'   => 'utf8',
+		// 	'collation' => 'utf8_unicode_ci',
+		// 	'prefix'    => '',
+		// ),
+
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
