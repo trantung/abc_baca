@@ -37,7 +37,7 @@
 							<span class="slider_txt1">{{ $value->name }} </span>
 							<span class="slider_txt2 color4">{{ $value->name2 }} </span>
 							<span class="slider_txt3 color4">{{ $value->summary }}</span>
-							<a href="{{ $value->url }}" class="camera_more_btn v2">Read more</a>
+							<a href="{{ $value->url }}" class="camera_more_btn v2">Xem thêm</a>
 						</div>
 					</div>
 				</div>
