@@ -1200,6 +1200,7 @@ a.magnifier2 .zoom {
 .post-label span {
 	color: #000;
 	text-transform: uppercase;
+	font-weight: bold;
 }
 .marBot3 {
 	margin-bottom: 30px;

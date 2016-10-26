@@ -7,6 +7,9 @@
 	<meta name="robots" content="noodp,index,follow" />
 	<meta name="language" content="vietnamese" />
 	<meta name="distribution" content="global">
+
+<meta name="google-site-verification" content="CsCwbOMke-0sXlSsLZiTTgKuAgTF2FC9Men1ebRjYVo" />
+
 	@if(!empty($meta_title))
 	<meta name="title" content="{{ $meta_title }}">
 	@endif
@@ -69,4 +72,4 @@
 	<script src="/js/html5shiv.js"></script>
 	<link rel="stylesheet" type="text/css" media="screen" href="/css/ie.css">
 	<![endif]-->
-</head>
+</head>	
