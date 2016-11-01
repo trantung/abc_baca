@@ -71,7 +71,7 @@
 						</div>
 						<h2 class="color3"><span>{{ $blocks[1]->name }}</span> {{ $blocks[1]->name2 }}</h2>
 					</div>
-					<p class="marTop2 lh26">{{ $blocks[0]->description }}</p>
+					<p class="marTop2 lh26">{{ $blocks[1]->description }}</p>
 					<a href="{{ url($blocks[1]->url) }}" class="more_btn">Xem thêm</a>
 				</div>
 
