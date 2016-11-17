@@ -6,7 +6,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="grid_4">
-					<h1><a href="/"><img src="/assets/images/logo.png" alt="Bắc Á Land" class="toplogo"></a> </h1>
+					<h1><a href="/" class="toplogo1"><img src="/assets/images/logo.png" alt="Bắc Á Land" class="toplogo"></a> </h1>
 				</div>
 				<div class="grid_8">
 					<nav>
