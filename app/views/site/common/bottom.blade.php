@@ -43,7 +43,7 @@
 
 		<div class="row">
 			<div class="grid_3 wow fadeInLeft">
-				<div class="marTop4"><a href="/" class="bottomlogo1"><img src="/assets/images/logo_footer.png" alt="Bắc Á Land" class="bottomlogo"></a> </div>
+				<div class="marTop4"><a href="/" class="bottomlogo1"><img src="/assets/images/logo.png" alt="Bắc Á Land" class="bottomlogo"></a> </div>
 			</div>
 			<div class="grid_7 wow fadeInUp">
 				<p class="lh26">{{ $configSite->company_information }}</p>
