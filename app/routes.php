@@ -42,6 +42,13 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::get('/postimage/{postId}/create', 'PostImageController@create2');
 	Route::resource('/postimage', 'PostImageController');
 
+	//sessionuser
+	Route::post('/sessionuser/deleteSessionUser', 'SessionUserController@deleteSessionUser');
+	Route::post('/sessionuser/deleteAll', 'SessionUserController@deleteAllSessionUser');
+	Route::get('/sessionuser/indexuser', 'SessionUserController@indexuser');
+	Route::get('/sessionuser/{tel}', 'SessionUserController@indextel');
+	Route::resource('/sessionuser', 'SessionUserController');
+
 });
 
 Route::get('/sitemap.xml', 'SiteController@sitemap');

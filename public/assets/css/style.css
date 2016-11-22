@@ -16,6 +16,13 @@
 /*========================================================
 										Main layout styles
 =========================================================*/
+* {
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
 html,
 body {
 	margin: 0;
@@ -1205,15 +1212,25 @@ a.magnifier2 .zoom {
 .marBot3 {
 	margin-bottom: 30px;
 }
-
+.description {
+	color: #333;
+}
 .description table {
     border-collapse: collapse;
+    font: normal !important;
 }
 .description table, 
 .description th, 
 .description td {
     border: 1px solid black;
     padding: 5px;
+}
+.description ul,
+.description ol {
+	list-style: inherit;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-left: 40px;
 }
 .custom-box-2 {
 	background: #f2f2f2;
