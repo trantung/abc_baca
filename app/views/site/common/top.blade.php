@@ -29,7 +29,7 @@
 							</li>
 							<li><a href="/dich-vu">Dịch vụ<strong></strong></a></li>
 							<li><a href="/du-an">Dự án<strong></strong></a></li>
-							<li><a href="/dat-hang">Đặt hàng<strong></strong></a></li>
+							<!-- <li><a href="/dat-hang">Đặt hàng<strong></strong></a></li> -->
 							<li id="last-li"><a href="/lien-he">Liên hệ<strong></strong></a></li>
 						</ul>
 					</nav>
