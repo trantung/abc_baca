@@ -3,12 +3,13 @@ class CommonAdmin
 {
 	public static function uploadImage($path, $image, $currentImage = NULL)
 	{
-		$destinationPath = public_path().'/'.$path.'/';
+		$destinationPath = public_path().$path;
 		if(Input::hasFile($image)){
 			$file = Input::file($image);
 			$filename = $file->getClientOriginalName();
-			$uploadSuccess = $file->move($destinationPath, changeFileNameImage($filename));
-			return $path.changeFileNameImage($filename);
+			$filename2 = changeFileNameImage($filename);
+			$uploadSuccess = $file->move($destinationPath, $filename2);
+			return $path.$filename2;
 		}
 		if($currentImage) {
 			return $currentImage;

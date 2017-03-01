@@ -77,6 +77,7 @@
 					</div>
 					<div class="form-group">
 						<label>Code nhúng</label>
+						<p>Ví dụ: https://my.matterport.com/show/?m=c93sVvjFZaF</p>
 						<div class="row">
 							<div class="col-sm-6">
 							<textarea class="form-control" name="embed" rows="4"></textarea>

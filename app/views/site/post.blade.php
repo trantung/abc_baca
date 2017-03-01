@@ -42,9 +42,11 @@
 		</div>
 		@endif
 
+		@if($post->embed != '')
 		<div class="marBot3 description">
 		<iframe src="{{ $post->embed }}" style="border:none; width: 100%; height: 400px;" allowfullscreen></iframe>
 		</div>
+		@endif
 
 		<p class="marBot3">{{ $post->summary }}</p>
 
