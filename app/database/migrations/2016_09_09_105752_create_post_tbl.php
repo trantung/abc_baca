@@ -25,6 +25,7 @@ class CreatePostTbl extends Migration {
             $table->string('meta_image');
             $table->integer('type');
             $table->integer('gallery_id');
+            $table->text('embed');
             $table->timestamp('start_date')->default(date('Y-m-d H:i:s'));
             $table->integer('status')->default(ACTIVE);
             $table->timestamps();

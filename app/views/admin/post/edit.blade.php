@@ -81,6 +81,14 @@
 							</div>
 						</div>
 					</div>
+					<div class="form-group">
+						<label>Code nhúng</label>
+						<div class="row">
+							<div class="col-sm-6">
+							<textarea class="form-control" name="embed" rows="4">{{ $data->embed }}</textarea>
+							</div>
+						</div>
+					</div>
 
 					@include('admin.common.meta', array('isEdit'=>1))
 				</div>

@@ -42,10 +42,14 @@
 		</div>
 		@endif
 
+		<div class="marBot3 description">
+		<iframe src="{{ $post->embed }}" style="border:none; width: 100%; height: 400px;"></iframe>
+		</div>
+
 		<p class="marBot3">{{ $post->summary }}</p>
 
 		<div class="marBot3 description">
-			{{ $post->description }}	
+			{{ $post->description }}
 		</div>
 
 	</div>
