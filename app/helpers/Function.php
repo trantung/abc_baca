@@ -99,7 +99,7 @@ function checkActive($uri = '')
 {
 	$segment = Request::segment(1);
 	if ($segment == $uri) {
-		return 'class = "active"';
+		return 'class = "current"';
 	}
 	return;
 }

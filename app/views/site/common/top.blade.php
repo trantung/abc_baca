@@ -11,8 +11,8 @@
 				<div class="grid_8">
 					<nav>
 						<ul class="sf-menu">
-							<li class="current"><a href="/">Trang chủ<strong></strong></a></li>
-							<li><a href="/gioi-thieu">Giới thiệu<strong></strong></a>
+							<li {{checkActive()}}><a href="/">Trang chủ<strong></strong></a></li>
+							<li {{checkActive('gioi-thieu')}}><a href="/gioi-thieu">Giới thiệu<strong></strong></a>
 								<!-- <ul class="submenu">
 									<li><a href="#">Lorem ipsum </a></li>
 									<li><a href="#">Conse ctetur</a></li>
@@ -27,10 +27,10 @@
 									<li class="last"><a href="#">Ut enim ad minim</a></li>
 								</ul> -->
 							</li>
-							<li><a href="/dich-vu">Dịch vụ<strong></strong></a></li>
-							<li><a href="/du-an">Dự án<strong></strong></a></li>
+							<li {{checkActive('dich-vu')}}><a href="/dich-vu">Dịch vụ<strong></strong></a></li>
+							<li {{checkActive('du-an')}}><a href="/du-an">Dự án<strong></strong></a></li>
 							<!-- <li><a href="/dat-hang">Đặt hàng<strong></strong></a></li> -->
-							<li id="last-li"><a href="/lien-he">Liên hệ<strong></strong></a></li>
+							<li id="last-li" {{checkActive('lien-he')}}><a href="/lien-he">Liên hệ<strong></strong></a></li>
 						</ul>
 					</nav>
 				</div>
