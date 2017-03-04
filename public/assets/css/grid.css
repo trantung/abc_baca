@@ -442,13 +442,13 @@ table {
 }
 @media (max-width: 767px) {
   .box-1 {
-    color: #eee;
+    color: #eee !important;
   }
   p {
-    font-size: 17px;
+    font-size: 18px;
   }
   p span {
-    font-size: 17px !important;
+    font-size: 18px !important;
   }
   .container {
     /*width: 420px;
@@ -467,7 +467,7 @@ table {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-size: 17px;
+    font-size: 18px;
   }
   .select-menu {
     display: block !important;
