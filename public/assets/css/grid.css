@@ -444,6 +444,9 @@ table {
   p {
     font-size: 17px;
   }
+  p span {
+    font-size: 17px !important;
+  }
   .container {
     /*width: 420px;
     padding: 0 0px;*/
@@ -468,9 +471,6 @@ table {
   }
 }
 @media (max-width: 479px) {
-  p {
-    font-size: 17px;
-  }
   body {
     padding: 0;
   }
