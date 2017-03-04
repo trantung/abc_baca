@@ -441,9 +441,14 @@ table {
   display: none !important;
 }
 @media (max-width: 767px) {
+  p {
+    font-size: 17px;
+  }
   .container {
-    width: 420px;
-    padding: 0 0px;
+    /*width: 420px;
+    padding: 0 0px;*/
+    width: 100%;
+    padding: 0 10px;
   }
   .row {
     margin-left: 0;
@@ -456,18 +461,24 @@ table {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    font-size: 17px;
   }
   .select-menu {
     display: block !important;
   }
 }
 @media (max-width: 479px) {
+  p {
+    font-size: 17px;
+  }
   body {
     padding: 0;
   }
   .container {
-    width: 300px;
-    padding: 0 15px;
+    /*width: 300px;
+    padding: 0 15px;*/
+    width: 100%;
+    padding: 0 10px;
   }
   .row {
     margin-left: 0;

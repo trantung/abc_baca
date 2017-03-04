@@ -1327,17 +1327,17 @@ img.bottomlogo {
 		float: left;
 		margin-right: 10px;
 	}
+	a.toplogo1, a.bottomlogo1 {
+		height: auto;
+	}
+	img.toplogo, img.bottomlogo {
+		max-height: 100%;
+    	height: auto;
+	}
 }
 @media only screen and (max-width: 479px) {
 	.figure1 {
 		width: 50%;
-	}
-	a.toplogo1 {
-		height: auto;
-	}
-	img.toplogo {
-		max-height: 100%;
-    	height: auto;
 	}
 	/*h1 {width: 100%;}
 	h1 img{width: 100%;}*/
