@@ -441,6 +441,9 @@ table {
   display: none !important;
 }
 @media (max-width: 767px) {
+  .box-1 {
+    color: #eee;
+  }
   p {
     font-size: 17px;
   }
