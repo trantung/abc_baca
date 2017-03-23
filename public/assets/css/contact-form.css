@@ -82,7 +82,7 @@
   outline: none;
   color: #888888;
   height: 41px;
-  border: 1px solid #eaeaea;
+  border: 1px solid #cccccc;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -188,13 +188,13 @@ textarea {
   font-family: 'Lato', Arial, sans-serif;
   padding: 10px 17px 10px;
   outline: none;
-  border: 1px solid #eaeaea;
+  border: 1px solid #cccccc;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   resize: none;
   color: #888888;
-  height: 304px;
+  height: 130px;
   background: none;
 }
 #contact-form .btns {

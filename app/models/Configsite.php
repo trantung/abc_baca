@@ -7,7 +7,7 @@
 	{
 		use SoftDeletingTrait;
 	    protected $table = 'configsite';
-	    protected $fillable = ['meta_title','meta_description','meta_keyword','meta_image','code','address','phone','email','company_information','company_contact','map'];
+	    protected $fillable = ['meta_title','meta_description','meta_keyword','meta_image','code','address','phone','email','company_name','company_information','company_contact','map'];
 	    protected $dates = ['deleted_at'];
 	}
 ?>

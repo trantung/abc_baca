@@ -49,47 +49,6 @@
 	@endif
 
 
-	<div class="box-1">
-		<div class="container">
-			<div class="row">
-				<div class="grid_4 wow fadeInLeft" data-wow-duration="" data-wow-delay="0.0s">
-					<div class="wrapper">
-						<!-- <img src="/assets/images/page1_icon1.png" alt="" class="img1 no_resize"> -->
-						<div class="icon_holder img1">
-							<i class="fa fa-calculator"></i>
-						</div>
-						<h2 class="color3"><span>{{ $blocks[0]->name }}</span> {{ $blocks[0]->name2 }}</h2>
-					</div>
-					<p class="marTop1 lh26">{{ $blocks[0]->description }}</p>
-					<a href="{{ url($blocks[0]->url) }}" class="more_btn">Xem thêm</a>
-				</div>
-
-				<div class="grid_4 wow fadeInUp" data-wow-duration="" data-wow-delay="0.2s">
-					<div class="wrapper">
-						<div class="icon_holder img1 v2">
-							<i class="fa fa-bar-chart"></i>
-						</div>
-						<h2 class="color3"><span>{{ $blocks[1]->name }}</span> {{ $blocks[1]->name2 }}</h2>
-					</div>
-					<p class="marTop2 lh26">{{ $blocks[1]->description }}</p>
-					<a href="{{ url($blocks[1]->url) }}" class="more_btn">Xem thêm</a>
-				</div>
-
-				<div class="grid_4 wow fadeInRight" data-wow-duration="" data-wow-delay="0.4s">
-					<div class="wrapper">
-						<div class="icon_holder img1 v3">
-							<i class="fa fa-info-circle"></i>
-						</div>
-						<h2 class="color3"><span>{{ $blocks[2]->name }} </span> {{ $blocks[2]->name2 }}</h2>
-					</div>
-					<p class="marTop1 lh26">{{ $blocks[2]->description }}</p>
-					<a href="{{ url($blocks[2]->url) }}" class="more_btn">Xem thêm</a>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
 
 	<div class="container">
 		<div class="row">
@@ -156,7 +115,7 @@
 	</div>
 	@endif
 
-	@include('site.common.bottom')
+	<!-- @include('site.common.bottom') -->
 
 </section>
 

@@ -32,7 +32,7 @@ body {
 body {
 	min-width: 300px;
 	background: #f2f2f2;
-	color: #777777;
+	color: #333333;
 	font: 300 15px/25px "Lato", Arial, sans-serif;
 }
 a[href^="tel:"] {
@@ -52,7 +52,7 @@ h1 img {
 	max-width: inherit;
 }
 h2 {
-	font: bold 45px/52px 'Lato', Arial, sans-serif;
+	font: bold 35px/52px 'Lato', Arial, sans-serif;
 	color: #262626;
 	margin-top: 60px;
 }
@@ -738,7 +738,7 @@ blockquote p {
 	text-decoration: none;
 	font: 22px/26px "Lato", Arial, sans-serif;
 	color: #000;
-	border: 2px solid #d2d2d2;
+	border: 2px solid #ccc;
 	border-radius: 5px;
 }
 .more_btn2:hover {
@@ -903,11 +903,14 @@ a.magnifier2 .zoom {
 	width: 100%;
 	margin-top: 0;
 	padding: 57px 0 67px;
-	color: #888;
+	color: #333;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	background: #f2f2f2;
+	background: #ddd;
+}
+.box-3 p {
+	font-size: 18px;
 }
 .figure1 {
 	width: 20%;
@@ -949,6 +952,7 @@ a.magnifier2 .zoom {
 .address1 {
 	padding-top: 20px;
 	display: block;
+	font-style: normal;
 }
 .address1 dt {
 	margin-bottom: 14px;

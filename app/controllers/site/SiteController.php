@@ -37,6 +37,12 @@ class SiteController extends HomeController {
         if(Cache::has($cacheName)) {
             return Cache::get($cacheName);
         }
+        //blocks trang dich vu
+        if($slug == 'dich-vu') {
+        	$blocks = Block::all();
+    	} else {
+    		$blocks = null;
+    	}
 		//type
 		$type = PostType::where('slug', $slug)->first();
 		if(isset($type)) {
@@ -46,10 +52,10 @@ class SiteController extends HomeController {
 				->orderBy('start_date', 'desc')
 				->paginate(PAGINATION);
 			//put cache
-	        $html = View::make('site.type')->with(compact('type', 'posts'))->render();
+	        $html = View::make('site.type')->with(compact('type', 'posts', 'blocks'))->render();
 	        Cache::forever($cacheName, $html);
 	        //return view
-	        return View::make('site.type')->with(compact('type', 'posts'));
+	        return View::make('site.type')->with(compact('type', 'posts', 'blocks'));
 		}
 		//post
 		$post = Post::where('slug', $slug)

@@ -1,13 +1,25 @@
 <!--========================================================
 													FOOTER 
 =========================================================-->
+@if(isset($configSite))
+<div class="box-3">
+	<div class="container">
+		<div class="row">
+			<div class="grid_12">
+				<p><strong>{{ $configSite->company_name }}</strong></p>
+				<p><strong>Địa chỉ: </strong>{{ $configSite->address }}</p>
+				<p><strong>Điện thoại: </strong>{{ $configSite->phone }}</p>
+				<p><strong>Email: </strong><a href="mailto:{{ $configSite->email }}">{{ $configSite->email }}</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+@endif
 <footer id="footer" class="main_page">
 	<div class="container">
 		<div class="row">
 			<div class="grid_12">
-
-				<p class="txt_priv wow fadeInLeft">Copyright &copy; <span id="copyright-year"></span>. <!--<a href="/">Privacy Policy</a><br>--></p>
-
+				<p class="txt_priv">Copyright &copy; <span id="copyright-year">2017</span>.</p>
 			</div>
 		</div>
 	</div>

@@ -29,7 +29,7 @@
 							</li>
 							<li {{checkActive('dich-vu')}}><a href="/dich-vu">Dịch vụ<strong></strong></a></li>
 							<li {{checkActive('du-an')}}><a href="/du-an">Dự án<strong></strong></a></li>
-							<li {{checkActive('canh-quan')}}><a href="/canh-quan">Cảnh quan<strong></strong></a></li>
+							<li {{checkActive('cong-nghe-nha-mau-ao')}}><a href="/cong-nghe-nha-mau-ao">Công nghệ nhà mẫu ảo<strong></strong></a></li>
 							<!-- <li><a href="/dat-hang">Đặt hàng<strong></strong></a></li> -->
 							<li id="last-li" {{checkActive('lien-he')}}><a href="/lien-he">Liên hệ<strong></strong></a></li>
 						</ul>

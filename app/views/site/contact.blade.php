@@ -25,7 +25,7 @@
 				</div> -->
 			</div>
 
-			<div class="grid_6">
+			<div class="grid_6 wow fadeInRight" data-wow-duration="" data-wow-delay="0.0s">
 				<p class="txt4 color4 marTop9">Gửi<br><span class="colorff8401">Liên hệ</span></p>
 
 				<form id="contact-form" method="post" action="/lien-he">

@@ -22,6 +22,7 @@ class CreateConfigsiteTbl extends Migration {
             $table->string('address');
             $table->string('phone');
             $table->string('email');
+            $table->string('company_name');
             $table->text('company_information');
             $table->text('company_contact');
             $table->text('map');

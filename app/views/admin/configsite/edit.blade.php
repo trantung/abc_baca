@@ -69,6 +69,14 @@
 						</div>
 					</div>
 					<div class="form-group">
+						<label>Tên công ty</label>
+						<div class="row">
+							<div class="col-sm-6">
+								<input type="text" class="form-control" name="company_name" value="{{ $data->company_name }}" >
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
 						<label>Thông tin công ty cuối trang</label>
 						<div class="row">
 							<div class="col-sm-6">
