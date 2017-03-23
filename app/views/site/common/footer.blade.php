@@ -8,7 +8,7 @@
 			<div class="grid_12">
 				<p><strong>{{ $configSite->company_name }}</strong></p>
 				<p><strong>Địa chỉ: </strong>{{ $configSite->address }}</p>
-				<p><strong>Điện thoại: </strong>{{ $configSite->phone }}</p>
+				<p><strong>Điện thoại: <span class="color6">{{ $configSite->phone }}</span></strong></p>
 				<p><strong>Email: </strong><a href="mailto:{{ $configSite->email }}">{{ $configSite->email }}</a></p>
 			</div>
 		</div>
