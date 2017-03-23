@@ -37,6 +37,8 @@ class SiteController extends HomeController {
         if(Cache::has($cacheName)) {
             return Cache::get($cacheName);
         }
+        //config site
+        $configSite = Configsite::first();
         //blocks trang dich vu
         if($slug == 'dich-vu') {
         	$blocks = Block::all();
@@ -52,10 +54,10 @@ class SiteController extends HomeController {
 				->orderBy('start_date', 'desc')
 				->paginate(PAGINATION);
 			//put cache
-	        $html = View::make('site.type')->with(compact('type', 'posts', 'blocks'))->render();
+	        $html = View::make('site.type')->with(compact('type', 'posts', 'blocks', 'configSite'))->render();
 	        Cache::forever($cacheName, $html);
 	        //return view
-	        return View::make('site.type')->with(compact('type', 'posts', 'blocks'));
+	        return View::make('site.type')->with(compact('type', 'posts', 'blocks', 'configSite'));
 		}
 		//post
 		$post = Post::where('slug', $slug)
@@ -65,10 +67,10 @@ class SiteController extends HomeController {
 		if(isset($post)) {
 			$images = PostImage::where('post_id', $post->id)->get();
 			//put cache
-	        $html = View::make('site.post')->with(compact('post', 'images'))->render();
+	        $html = View::make('site.post')->with(compact('post', 'images', 'configSite'))->render();
 	        Cache::forever($cacheName, $html);
 	        //return view
-	        return View::make('site.post')->with(compact('post', 'images'));
+	        return View::make('site.post')->with(compact('post', 'images', 'configSite'));
 		}
 		return Response::view('site.404', [], 404);
 	}
