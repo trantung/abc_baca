@@ -5,10 +5,10 @@
 	<div id="stuck_container">
 		<div class="container">
 			<div class="row">
-				<div class="grid_4">
+				<div class="grid_3">
 					<div><a href="/" class="toplogo1"><img src="/assets/images/logo.png" alt="Bắc Á Land" class="toplogo"></a> </div>
 				</div>
-				<div class="grid_8">
+				<div class="grid_9">
 					<nav>
 						<ul class="sf-menu">
 							<li {{checkActive()}}><a href="/">Trang chủ<strong></strong></a></li>
