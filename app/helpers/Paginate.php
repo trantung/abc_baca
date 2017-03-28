@@ -70,28 +70,18 @@ class Paginate extends Illuminate\Pagination\BootstrapPresenter {
 	public function getLinks()
 	{
 		$html = '';
-		if ($this->currentPage >= 3) {
-			if (getDevice() == COMPUTER) {
-				$html .= $this->getNormalTextWrapper('...');
-			}
-			// else {
-			// 	$html .= $this->getNormalTextWrapper('');
-			// }
-		}
+		// if ($this->currentPage >= 3) {
+		// 	$html .= $this->getNormalTextWrapper('...');
+		// }
 		return $html;
 	}
 
 	public function getLastLinks()
 	{
 		$html = '';
-		if ($this->currentPage <= $this->lastPage - 2) {
-			if (getDevice() == COMPUTER) {
-		  		$html .= $this->getNormalTextWrapper('...');
-			}
-			// else {
-		 //  		$html .= $this->getNormalTextWrapper('');
-			// }
-		}
+		// if ($this->currentPage <= $this->lastPage - 2) {
+		// 	$html .= $this->getNormalTextWrapper('...');
+		// }
 		return $html;
 	}
 }
