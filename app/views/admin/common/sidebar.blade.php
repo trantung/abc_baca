@@ -28,7 +28,10 @@
 				</ul>
 			</li>
 			<li><a href="{{ action('ContactController@index') }}"><i class="fa fa-chevron-right"></i> <span>Quản lý liên hệ</span></a></li>
+			<li><a href="{{ action('TypeProjectController@index') }}"><i class="fa fa-chevron-right"></i> <span>Quản lý thể loại dự án</span></a></li>
+			<li><a href="{{ action('CityController@index') }}"><i class="fa fa-chevron-right"></i> <span>Quản lý tỉnh thành</span></a></li>
 			<li><a href="{{ action('ConfigsiteController@edit', 1) }}"><i class="fa fa-chevron-right"></i> <span>Cài đặt chung</span></a></li>
+			
 			@if(Admin::isAdmin())
 			<li>
 				<a href="{{ action('ManagerController@index') }}">

@@ -1,14 +1,14 @@
 @extends('admin.layout.default')
 
 @section('title')
-{{ $title='Thêm thể loại' }}
+{{ $title='Thêm thể loại dự án' }}
 @stop
 
 @section('content')
 
 <div class="row margin-bottom">
 	<div class="col-xs-12">
-		<a href="{{ action('PostTypeController@index') }}" class="btn btn-success">Danh sách</a>
+		<a href="{{ action('TypeProjectController@index') }}" class="btn btn-success">Danh sách</a>
 	</div>
 </div>
 
@@ -16,10 +16,10 @@
 	<div class="col-xs-12">
 		<div class="box box-primary">
 			<!-- form start -->
-			{{ Form::open(array('action' => 'PostTypeController@store', 'files' => true)) }}
+			{{ Form::open(array('action' => 'TypeProjectController@store', 'files' => true)) }}
 				<div class="box-body">
 					<div class="form-group">
-						<label>Tiêu đề</label>
+						<label>Tên</label>
 						<div class="row">
 							<div class="col-sm-6">
 								<input type="text" class="form-control" name="name" value="">
@@ -27,14 +27,21 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label>Có slide </label>
+						<label>Vị trí</label>
 						<div class="row">
 							<div class="col-sm-6">
-								{{ Form::select('is_slide', Common::selectStatus(), ACTIVE, array('class' =>'form-control')) }}
+								<input type="text" class="form-control" name="weight_number" value="">
 							</div>
 						</div>
 					</div>
-					@include('admin.common.meta')
+					<div class="form-group">
+						<label>Trạng thái</label>
+						<div class="row">
+							<div class="col-sm-6">
+								{{ Form::select('status', Common::selectStatus(), ACTIVE, array('class' =>'form-control')) }}
+							</div>
+						</div>
+					</div>
 				</div>
 				<!-- /.box-body -->
 				<div class="box-footer">
@@ -46,5 +53,7 @@
 		<!-- /.box -->
 	</div>
 </div>
+
+@include('admin.common.ckeditor')
 
 @stop

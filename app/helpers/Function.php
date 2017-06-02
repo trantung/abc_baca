@@ -188,3 +188,14 @@ function convertToSlug($string)
     $rs = strtolower(preg_replace('/[^a-zA-Z0-9]+/i','-', $slug));
     return $rs;
 }
+function checkValueChecked($modelName, $arrayInput, $field =NULL)
+{
+    $check = $modelName::where($arrayInput)->first();
+    if ($check) {
+        if ($field) {
+            return $check->$field;
+        }
+        return true;
+    }
+    return null;
+}

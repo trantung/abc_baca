@@ -100,7 +100,14 @@
 							</div>
 						</div>
 					</div>
-					
+					<div class="form-group">
+						<label>Form liên hệ tự nhập </label>
+						<div class="row">
+							<div class="col-sm-10">
+								<textarea class="form-control" name="form_manual" id="editor2">{{ $data->form_manual }}</textarea>
+							</div>
+						</div>
+					</div>
 				</div>
 				<!-- /.box-body -->
 				<div class="box-footer">

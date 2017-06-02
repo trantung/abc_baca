@@ -85,6 +85,35 @@
 						</div>
 					</div>
 
+					<div class="form-group">
+						<label>Thể loại dự án</label>
+						<div class="row">
+                            @foreach(TypeProject::all() as $value)
+                            <div class="col-sm-6">
+                                {{ $value->name }}: {{ Form::checkbox("project_type[".$value->id."]", $value->id, null) }}
+                            </div>
+                            @endforeach
+                        </div>
+					</div>
+					<div class="form-group">
+						<label>Thành phố</label>
+						<div class="row">
+                            @foreach(City::all() as $city)
+                            <div class="col-sm-6">
+                                {{ $city->name }}: {{ Form::checkbox("city[".$city->id."]", $city->id, null) }}
+                            </div>
+                            @endforeach
+                        </div>
+					</div>
+					<div class="form-group">
+						<label>Hot</label>
+						<div class="row">
+							<div class="col-sm-6">
+								{{ Form::select('is_hot', Common::selectHot(), ACTIVE, array('class' =>'form-control')) }}
+							</div>
+						</div>
+					</div>
+
 					@include('admin.common.meta')
 				</div>
 				<!-- /.box-body -->
