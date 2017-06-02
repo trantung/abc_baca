@@ -42,7 +42,6 @@ class SiteController extends HomeController {
         //blocks trang dich vu
         if($slug == 'dich-vu') {
         	$blocks = Block::all();
-        	dd($blocks->toArray());
     	} else {
     		$blocks = null;
     	}

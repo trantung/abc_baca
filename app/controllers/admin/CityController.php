@@ -9,7 +9,7 @@ class CityController extends AdminController {
 	 */
 	public function index()
 	{
-		$data = TypeProject::orderBy('id', 'asc')->paginate(PAGINATE);
+		$data = City::orderBy('id', 'asc')->paginate(PAGINATE);
 		return View::make('admin.city.index')->with(compact('data'));
 	}
 
@@ -46,7 +46,7 @@ class CityController extends AdminController {
 	            ->withErrors($validator)
 	            ->withInput($input);
         } else {
-        	$id = TypeProject::create($input)->id;
+        	$id = City::create($input)->id;
         	if($id) {
         		Cache::flush();
         		return Redirect::action('CityController@index')->with('success', 'Đã lưu!');
@@ -77,7 +77,7 @@ class CityController extends AdminController {
 	 */
 	public function edit($id)
 	{
-		$data = TypeProject::find($id);
+		$data = City::find($id);
         return View::make('admin.city.edit', array('data'=>$data));
 	}
 
@@ -100,7 +100,7 @@ class CityController extends AdminController {
 	            ->withErrors($validator)
 	            ->withInput($input);
         } else {
-        	$data = TypeProject::find($id);
+        	$data = City::find($id);
         	$data->update($input);
         	Cache::flush();
     		return Redirect::action('CityController@index')->with('success', 'Đã lưu!');
@@ -115,7 +115,7 @@ class CityController extends AdminController {
 	 */
 	public function destroy($id)
 	{
-		$data = TypeProject::find($id);
+		$data = City::find($id);
 		if($data) {
 			Cache::flush();
 			$data->delete();

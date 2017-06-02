@@ -24,6 +24,7 @@
 						<tr>
 							<th>ID</th>
 							<th>Tiêu đề</th>
+							<th>Có slide</th>
 							<th>Ngày sửa</th>
 							<th style="width:300px;">Action</th>
 						</tr>
@@ -31,6 +32,11 @@
 						<tr>
 							<td>{{ $value->id }}</td>
 							<td>{{ $value->name }}</td>
+							@if($value->is_slide == ACTIVE)
+							<td>Có slide</td>
+							@else
+							<td>Không có slide</td>
+							@endif
 							<td>{{ $value->updated_at }}</td>
 							<td>
 								<a href="{{ action('PostTypeController@edit', $value->id) }}" class="btn btn-primary">Sửa</a>

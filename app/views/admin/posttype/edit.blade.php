@@ -27,6 +27,14 @@
 							</div>
 						</div>
 					</div>
+					<div class="form-group">
+						<label>Có slide </label>
+						<div class="row">
+							<div class="col-sm-6">
+								{{ Form::select('is_slide', Common::selectStatus(), $data->is_slide, array('class' =>'form-control')) }}
+							</div>
+						</div>
+					</div>
 					@include('admin.common.meta', array('isEdit'=>1))
 				</div>
 				<!-- /.box-body -->

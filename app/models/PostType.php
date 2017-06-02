@@ -5,6 +5,8 @@
 	class PostType extends Eloquent
 	{
 	    protected $table = 'post_types';
-	    protected $fillable = ['name','slug','summary','description','image','meta_title','meta_description','meta_keyword','meta_image','status'];
+	    protected $fillable = ['name','slug','summary','description',
+	    'image','meta_title','meta_description',
+	    'meta_keyword','meta_image','status','is_slide'];
 	}
 ?>

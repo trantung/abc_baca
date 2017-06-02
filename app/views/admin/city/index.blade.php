@@ -7,7 +7,7 @@
 @section('content')
 	<div class="row margin-bottom">
 		<div class="col-xs-12">
-			<a href="{{ action('TypeProjectController@create') }}" class="btn btn-primary">Thêm</a>
+			<a href="{{ action('CityController@create') }}" class="btn btn-primary">Thêm</a>
 		</div>
 	</div>
 
@@ -23,15 +23,17 @@
 						<tr>
 							<th>ID</th>
 							<th>Tên</th>
+							<th>Vị trí</th>
 							<th style="width:300px;">Action</th>
 						</tr>
 						@foreach($data as $key => $value)
 						<tr>
 							<td>{{ $value->id }}</td>
 							<td>{{ $value->name }}</td>
+							<td>{{ $value->weight_number }}</td>
 							<td>
-								<a href="{{ action('TypeProjectController@edit', $value->id) }}" class="btn btn-primary">Sửa</a>
-								{{ Form::open(array('method'=>'DELETE', 'action' => array('TypeProjectController@destroy', $value->id), 'style' => 'display: inline-block;')) }}
+								<a href="{{ action('CityController@edit', $value->id) }}" class="btn btn-primary">Sửa</a>
+								{{ Form::open(array('method'=>'DELETE', 'action' => array('CityController@destroy', $value->id), 'style' => 'display: inline-block;')) }}
 								<button class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa?');">Xóa</button>
 								{{ Form::close() }}
 							</td>

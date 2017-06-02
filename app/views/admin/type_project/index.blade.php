@@ -25,12 +25,14 @@
 						<tr>
 							<th>ID</th>
 							<th>Tên</th>
+							<th>Vị trí</th>
 							<th style="width:300px;">Action</th>
 						</tr>
 						@foreach($data as $key => $value)
 						<tr>
 							<td>{{ $value->id }}</td>
 							<td>{{ $value->name }}</td>
+							<td>{{ $value->weight_number }}</td>
 							<td>
 								<a href="{{ action('TypeProjectController@edit', $value->id) }}" class="btn btn-primary">Sửa</a>
 								{{ Form::open(array('method'=>'DELETE', 'action' => array('TypeProjectController@destroy', $value->id), 'style' => 'display: inline-block;')) }}
