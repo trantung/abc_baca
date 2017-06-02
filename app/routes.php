@@ -27,6 +27,9 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::get('/contact/search', 'ContactController@search');
 	Route::resource('/contact', 'ContactController');
 
+	Route::resource('/type/project', 'TypeProjectController');
+	Route::resource('/city', 'CityController');
+
 	Route::get('/slide/stype/{type}', 'SlideController@stype');
 	Route::resource('/slide', 'SlideController');
 

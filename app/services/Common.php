@@ -98,4 +98,12 @@ class Common {
 		return $data;
 	}
 
+	public static function selectHot()
+	{
+		return array(
+			ACTIVE => 'Dự án hot',
+			INACTIVE => 'Không phải dự án hot'
+		);
+	}
+
 }

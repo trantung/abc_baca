@@ -54,6 +54,19 @@ class PostController extends AdminController {
 				$input['start_date'] = date('Y-m-d H:i:00');
 			}
         	$id = Post::create($input)->id;
+        	$post = Post::find($id);
+        	//start
+        	//thêm thể loại dự án cho bài viết dự án
+        	if (isset($input['project_type'])) {
+        		$type = $input['project_type'];
+        		$post->hasProjectTypes()->attach(array_keys($type));
+        	}
+        	//thêm thành phố cho bài viết dự án
+        	if (isset($input['city'])) {
+        		$cities = $input['city'];
+        		$post->hasCities()->attach(array_keys($cities));
+        	}
+        	//end
         	if($id) {
         		Cache::flush();
         		return Redirect::action('PostController@index')->with('success', 'Đã lưu!');
@@ -110,6 +123,22 @@ class PostController extends AdminController {
 	            ->withInput($input);
         } else {
         	$data = Post::find($id);
+        	//start
+        	//thêm thể loại dự án cho bài viết dự án
+        	if (isset($input['project_type'])) {
+        		$type = $input['project_type'];
+        		$data->hasProjectTypes()->sync(array_keys($type));
+        	} else {
+        		$data->hasProjectTypes()->detach();
+        	}
+        	//thêm thành phố cho bài viết dự án
+        	if (isset($input['city'])) {
+        		$cities = $input['city'];
+        		$data->hasCities()->sync(array_keys($cities));
+        	} else {
+        		$data->hasCities()->detach();
+        	}
+        	//end
         	$input['image'] = CommonAdmin::uploadImage(UPLOADIMG_POST, 'image', $data->image);
         	$input['meta_image'] = CommonAdmin::uploadImage(UPLOADIMG_POST, 'meta_image', $data->meta_image);
         	if($input['start_date'] == '') {
@@ -130,6 +159,8 @@ class PostController extends AdminController {
 	public function destroy($id)
 	{
 		$data = Post::find($id);
+		$data->hasProjectTypes()->detach();
+		$data->hasCities()->detach();
 		if($data) {
 			Cache::flush();
 			$data->delete();

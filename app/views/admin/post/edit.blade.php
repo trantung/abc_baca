@@ -91,6 +91,34 @@
 						</div>
 					</div>
 
+					<div class="form-group">
+						<label>Thể loại dự án</label>
+						<div class="row">
+                            @foreach(TypeProject::all() as $value)
+                            <div class="col-sm-6">
+                                {{ $value->name }}: {{ Form::checkbox("project_type[".$value->id."]", $value->id, checkValueChecked('RelationProject', ['post_id' => $data->id, 'type_project_id' => $value->id])) }}
+                            </div>
+                            @endforeach
+                        </div>
+					</div>
+					<div class="form-group">
+						<label>Thành phố</label>
+						<div class="row">
+                            @foreach(City::all() as $city)
+                            <div class="col-sm-6">
+                                {{ $city->name }}: {{ Form::checkbox("city[".$city->id."]", $city->id, checkValueChecked('CityProject', ['post_id' => $data->id, 'city_id' => $value->id])) }}
+                            </div>
+                            @endforeach
+                        </div>
+					</div>
+					<div class="form-group">
+						<label>Hot</label>
+						<div class="row">
+							<div class="col-sm-6">
+								{{ Form::select('is_hot', Common::selectHot(), $data->is_hot, array('class' =>'form-control')) }}
+							</div>
+						</div>
+					</div>
 					@include('admin.common.meta', array('isEdit'=>1))
 				</div>
 				<!-- /.box-body -->
