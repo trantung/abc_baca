@@ -24,53 +24,102 @@
 @section('title', $title)
 
 @section('content')
-	
+	<link rel="stylesheet" href="/assets/css/swiper.min.css">
 <!--========================================================
 													CONTENT 
 =========================================================-->
 <section id="content">
 
 	<div class="container">
+		@if (isset($hotProject))
+			<div class="partner">
+				<h3 class="box-title-center">DỰ ÁN HOT</h3>
+				<!-- Swiper -->
+			    <div class="swiper-container">
+			        <div class="swiper-wrapper">
+			            <div class="swiper-slide"><img src="{{ url('/images/post/29/Lighthouse-1496433125.jpg') }}"></div>
+			            <div class="swiper-slide"><img src="{{ url('/images/post/29/Lighthouse-1496433125.jpg') }}"></div>
+			            <div class="swiper-slide"><img src="{{ url('/images/post/29/Lighthouse-1496433125.jpg') }}"></div>
+			            <div class="swiper-slide"><img src="{{ url('/images/post/29/Lighthouse-1496433125.jpg') }}"></div>
+			            <div class="swiper-slide"><img src="{{ url('/images/post/29/Lighthouse-1496433125.jpg') }}"></div>
+			            <div class="swiper-slide"><img src="{{ url('/images/post/29/Lighthouse-1496433125.jpg') }}"></div>
+			        </div>
+			        <!-- Add Arrows -->
+			        <div class="swiper-button-next"></div>
+			        <div class="swiper-button-prev"></div>
+			    </div>
+		
+			</div>
+		@endif
+
 		<h1 class="txt4 color4 marTop9 marBot3">{{ $type->name }}</h1>
 		
 		@if($blocks)
-			<div class="container marBot3">
-				<div class="row">
-					<div class="grid_4">
-						<div class="wrapper">
-							<!-- <img src="/assets/images/page1_icon1.png" alt="" class="img1 no_resize"> -->
-							<div class="icon_holder img1">
-								<i class="fa fa-calculator"></i>
-							</div>
-							<h2 class="color262626"><span>{{ $blocks[0]->name }}</span> {{ $blocks[0]->name2 }}</h2>
-						</div>
-						<p class="marTop1 lh26">{{ $blocks[0]->description }}</p>
-						<a href="{{ url($blocks[0]->url) }}" class="more_btn2">Xem thêm</a>
-					</div>
+			@if (isset($servicesPage))
+				<div class="row" style="padding-top: 20px;">
+		        <div class="col-md-12">
+		          <!-- The time line -->
+		          <ul class="timeline">
+		            
+		            <!-- timeline item -->
+		            <li>
+		              <i class="fa fa-calculator bg-blue"></i>
 
-					<div class="grid_4">
-						<div class="wrapper">
-							<div class="icon_holder img1 v2">
-								<i class="fa fa-bar-chart"></i>
-							</div>
-							<h2 class="color262626"><span>{{ $blocks[1]->name }}</span> {{ $blocks[1]->name2 }}</h2>
-						</div>
-						<p class="marTop2 lh26">{{ $blocks[1]->description }}</p>
-						<a href="{{ url($blocks[1]->url) }}" class="more_btn2">Xem thêm</a>
-					</div>
+		              <div class="timeline-item">
 
-					<div class="grid_4">
-						<div class="wrapper">
-							<div class="icon_holder img1 v3">
-								<i class="fa fa-info-circle"></i>
-							</div>
-							<h2 class="color262626"><span>{{ $blocks[2]->name }} </span> {{ $blocks[2]->name2 }}</h2>
-						</div>
-						<p class="marTop1 lh26">{{ $blocks[2]->description }}</p>
-						<a href="{{ url($blocks[2]->url) }}" class="more_btn2">Xem thêm</a>
-					</div>
-				</div>
-			</div>
+		                <h3 class="timeline-header"><span href="#">{{ $blocks[0]->name }}</span> {{ $blocks[0]->name2 }}</h3>
+
+		                <div class="timeline-body">
+			                 {{ $blocks[0]->description }}
+		                </div>
+		                <div class="timeline-footer">
+		                  <a class="btn btn-warning btn-xs">Xem thêm</a>
+		                </div>
+		              </div>
+		            </li>
+		            <!-- END timeline item -->
+		            <!-- timeline item -->
+		            <li>
+		              <i class="fa fa-chart bg-aqua"></i>
+
+		              <div class="timeline-item">
+
+		                <h3 class="timeline-header no-border"><span>{{ $blocks[1]->name }}</span> {{ $blocks[1]->name2 }}</h3>
+		                <div class="timeline-body">
+			                 {{ $blocks[1]->description }}
+		                </div>
+		                <div class="timeline-footer">
+		                  <a class="btn btn-warning btn-xs">Xem thêm</a>
+		                </div>
+		              </div>
+		            </li>
+		            <!-- END timeline item -->
+		            <!-- timeline item -->
+		            <li>
+		              <i class="fa fa-circle bg-yellow"></i>
+
+		              <div class="timeline-item">
+
+		                <h3 class="timeline-header"><span>{{ $blocks[2]->name }} </span> {{ $blocks[2]->name2 }}</h3>
+
+		                <div class="timeline-body">
+			                 {{ $blocks[2]->description }}
+		                </div>
+		                <div class="timeline-footer">
+		                  <a class="btn btn-warning btn-xs">Xem thêm</a>
+		                </div>
+		              </div>
+		            </li>
+		            <!-- END timeline item -->
+		            <li>
+		              <i class="fa fa-clock-o bg-gray"></i>
+		            </li>
+		          </ul>
+		        </div>
+		        <!-- /.col -->
+		      </div>
+			@endif
+			
 		@else
 			@if(count($posts) > 0)
 				<div class="row">
@@ -105,5 +154,13 @@
 	</div>
 
 </section>
-
+<script src="/assets/js/swiper.jquery.min.js"></script>
+<script>
+var swiper = new Swiper('.swiper-container', {
+	slidesPerView: 5,
+	nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    spaceBetween: 0
+});
+</script>
 @stop

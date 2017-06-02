@@ -34,9 +34,9 @@ class SiteController extends HomeController {
         //cache name
         $cacheName = $slug.'_'.$page;
         //get cache
-        if(Cache::has($cacheName)) {
-            return Cache::get($cacheName);
-        }
+        // if(Cache::has($cacheName)) {
+        //     return Cache::get($cacheName);
+        // }
         //config site
         $configSite = Configsite::first();
         //blocks trang dich vu
@@ -44,6 +44,12 @@ class SiteController extends HomeController {
         	$blocks = Block::all();
     	} else {
     		$blocks = null;
+    	}
+    	if ($slug == 'du-an') {
+    		$hotProject = true;
+    	}
+    	if ($slug == 'dich-vu') {
+    		$servicesPage = true;
     	}
 		//type
 		$type = PostType::where('slug', $slug)->first();
@@ -54,10 +60,10 @@ class SiteController extends HomeController {
 				->orderBy('start_date', 'desc')
 				->paginate(PAGINATION);
 			//put cache
-	        $html = View::make('site.type')->with(compact('type', 'posts', 'blocks', 'configSite'))->render();
+	        $html = View::make('site.type')->with(compact('type', 'posts', 'blocks', 'configSite', 'hotProject'))->render();
 	        Cache::forever($cacheName, $html);
 	        //return view
-	        return View::make('site.type')->with(compact('type', 'posts', 'blocks', 'configSite'));
+	        return View::make('site.type')->with(compact('type', 'posts', 'blocks', 'configSite', 'hotProject', 'servicesPage'));
 		}
 		//post
 		$post = Post::where('slug', $slug)

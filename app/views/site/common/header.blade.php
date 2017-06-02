@@ -33,6 +33,7 @@
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="/assets/css/grid.css">
 	<link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="/adminlte/dist/css/adminLTE.css">
 	<script src="/assets/js/jquery.js"></script>
 	<script src="/assets/js/jquery-migrate-1.2.1.js"></script>
 	@if(isset($pageHome))

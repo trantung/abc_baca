@@ -54,6 +54,7 @@ $(document).ready(function(){
 <link rel="stylesheet" href="/assets/css/swiper.min.css">
 <!-- Swiper JS -->
 <script src="/assets/js/swiper.jquery.min.js"></script>
+<!-- Swiper JS -->
 <!-- Initialize Swiper -->
 <script>
 var swiper = new Swiper('.swiper-container', {
