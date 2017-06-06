@@ -59,5 +59,6 @@ Route::get('/sitemap.xml', 'SiteController@sitemap');
 // Route::get('/dat-hang', 'SiteController@order');
 Route::post('/lien-he', 'SiteController@sendContact');
 Route::get('/lien-he', 'SiteController@contact');
+Route::get('/filter-project', 'SiteController@getFilterProject');
 Route::get('/', 'SiteController@index');
 Route::get('{slug}', 'SiteController@slug');

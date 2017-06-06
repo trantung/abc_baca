@@ -104,7 +104,7 @@
 						<label>Form liên hệ tự nhập </label>
 						<div class="row">
 							<div class="col-sm-10">
-								<textarea class="form-control" name="form_manual" id="editor2">{{ $data->form_manual }}</textarea>
+								<textarea class="form-control" name="form_manual">{{ $data->form_manual }}</textarea>
 							</div>
 						</div>
 					</div>

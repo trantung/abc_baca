@@ -43,6 +43,7 @@
 	<!--[if (gt IE 9)|!(IE)]><!-->
 	<script src="/assets/js/jquery.mobile.customized.min.js"></script>
 	<script src="/assets/js/wow/wow.js"></script>
+	<script src="/assets/js/jssor.slider.min.js"></script>
 	<script>
 		$(document).ready(function () {
 			if ($('html').hasClass('desktop')) {

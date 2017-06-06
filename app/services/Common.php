@@ -55,7 +55,8 @@ class Common {
 	{
 		return array(
 			SLIDE_BANNER => 'Banner slide',
-			SLIDE_PARTNER => 'Logo đối tác'
+			SLIDE_PARTNER_TACTICAL => 'Đối tác chiến lược',
+			SLIDE_PARTNER_OTHER => 'Đối tác khác',
 		);
 	}
 	public static function labelSlide($type)

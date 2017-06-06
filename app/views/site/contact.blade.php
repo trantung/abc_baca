@@ -26,38 +26,7 @@
 			</div>
 
 			<div class="grid_6 wow fadeInRight" data-wow-duration="" data-wow-delay="0.0s">
-				<p class="txt4 color4 marTop9">Gửi<br><span class="colorff8401">Liên hệ</span></p>
-
-				<form id="contact-form" method="post" action="/lien-he">
-					<div class="contact-form-loader"></div>
-					@include('message')
-					<fieldset>
-						<label class="name">
-							<input type="text" name="name" placeholder="Họ tên" value="" required="" />
-							<span class="empty-message">Trường có dấu * là bắt buộc.</span>
-						</label>
-					 
-						<label class="email">
-							<input type="email" name="email" placeholder="E-mail" value="" required="" />
-							<span class="empty-message">Trường có dấu * là bắt buộc.</span>
-						</label>
-						<label class="phone">
-							<input type="text" name="phone" placeholder="Điện thoại" value="" required="" />
-							<span class="empty-message">Trường có dấu * là bắt buộc.</span>
-						</label>
-					 
-						<label class="message">
-							<textarea name="message" placeholder="Tin nhắn" required=""></textarea>
-							<span class="empty-message">Trường có dấu * là bắt buộc.</span>
-						</label>
-						<div class="btns">
-							<!-- <a href="#" class="more_btn" data-type="reset">Clear</a> -->
-							<!-- <a href="#" class="more_btn3" data-type="submit">Gửi</a> -->
-							<input type="submit" value="Gửi" class="more_btn3">
-						</div>
-					</fieldset> 
-				</form>
-
+				{{ $configSite->form_manual }}
 			</div>
 
 		</div>

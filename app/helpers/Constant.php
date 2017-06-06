@@ -27,3 +27,5 @@ define('BLOCK_2', 2);
 //slide type
 define('SLIDE_BANNER', 1);
 define('SLIDE_PARTNER', 2);
+define('SLIDE_PARTNER_TACTICAL', 2);
+define('SLIDE_PARTNER_OTHER', 3);

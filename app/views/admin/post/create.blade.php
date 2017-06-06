@@ -113,7 +113,14 @@
 							</div>
 						</div>
 					</div>
-
+					<div class="form-group">
+						<label>Form liên hệ tự nhập </label>
+						<div class="row">
+							<div class="col-sm-10">
+								<textarea class="form-control" name="form_manual"></textarea>
+							</div>
+						</div>
+					</div>
 					@include('admin.common.meta')
 				</div>
 				<!-- /.box-body -->

@@ -24,7 +24,8 @@
 				<ul class="treeview-menu">
 					<li><a href="{{ action('SlideController@create') }}"><i class="fa fa-circle-o"></i> Thêm slide</a></li>
 					<li><a href="{{ action('SlideController@stype', SLIDE_BANNER) }}"><i class="fa fa-circle-o"></i> Banner trang chủ</a></li>
-					<li><a href="{{ action('SlideController@stype', SLIDE_PARTNER) }}"><i class="fa fa-circle-o"></i> Logo đối tác</a></li>
+					<li><a href="{{ action('SlideController@stype', SLIDE_PARTNER) }}"><i class="fa fa-circle-o"></i> Đối tác chiến lược</a></li>
+					<li><a href="{{ action('SlideController@stype', SLIDE_PARTNER_OTHER) }}"><i class="fa fa-circle-o"></i> Đối tác khác</a></li>
 				</ul>
 			</li>
 			<li><a href="{{ action('ContactController@index') }}"><i class="fa fa-chevron-right"></i> <span>Quản lý liên hệ</span></a></li>

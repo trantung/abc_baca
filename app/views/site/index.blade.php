@@ -19,12 +19,18 @@
 @section('title', 'Trang chủ')
 
 @section('content')
-	
+	<style type="text/css">
+		.content-block {
+			height: 390px
+		}
+		.swiper-slide {
+			width: 150px !important;
+		}
+	</style>
 <!--========================================================
 													CONTENT 
 =========================================================-->
 <section id="content">        
-
 	@if(count($banners) > 0)
 	<!-- start Camera -->
 	<div class="camera_main_container  wow fadeIn">
@@ -55,20 +61,26 @@
 	<div class="container">
 		<div class="row">
 			<div class="grid_4 wow fadeInLeft" data-wow-duration="" data-wow-delay="0.0s">
+				<div class="content-block">
 				<h2 class="color262626">{{ $blocks[3]->name }} <br><span class="colorff8401">{{ $blocks[3]->name2 }}</span></h2>
-				{{ $blocks[3]->description }}
+					{{ $blocks[3]->description }}
+				</div>
 				<a href="{{ url($blocks[3]->url) }}" class="more_btn2">Xem thêm</a>
 			</div>
 
 			<div class="grid_4 wow fadeInUp" data-wow-duration="" data-wow-delay="0.3s">
-				<h2 class="color262626">{{ $blocks[4]->name }} <br><span class="colorff8401">{{ $blocks[4]->name2 }}</span></h2>
+				<div class="content-block">
+					<h2 class="color262626">{{ $blocks[4]->name }} <br><span class="colorff8401">{{ $blocks[4]->name2 }}</span></h2>
 				{{ $blocks[4]->description }}
+				</div>
 				<a href="{{ url($blocks[4]->url) }}" class="more_btn2">Xem thêm</a>
 			</div>
 
 			<div class="grid_4 wow fadeInRight listWithMarker" data-wow-duration="" data-wow-delay="0.6s">
-				<h2 class="colorff8401"><span class="color262626">{{ $blocks[5]->name }}</span><br>{{ $blocks[5]->name2 }}</h2>
+				<div class="content-block">
+					<h2 class="color262626">{{ $blocks[5]->name }}<span class="colorff8401"><br>{{ $blocks[5]->name2 }}</span></h2>
 				{{ $blocks[5]->description }}
+				</div>
 				<a href="{{ url($blocks[5]->url) }}" class="more_btn2">Xem thêm</a>
 			</div>
 		</div>
@@ -106,6 +118,23 @@
 	    <div class="swiper-container">
 	        <div class="swiper-wrapper">
 	        	@foreach($partners as $value)
+	            <div class="swiper-slide"><img src="{{ url($value->image) }}"></div>
+	            @endforeach
+	        </div>
+	        <!-- Add Arrows -->
+	        <div class="swiper-button-next"></div>
+	        <div class="swiper-button-prev"></div>
+	    </div>
+
+	</div>
+	@endif
+	@if(count($partnersOther) > 0)
+	<div class="partner">
+		<h3 class="box-title-center">Đối tác khác</h3>
+		<!-- Swiper -->
+	    <div class="swiper-container">
+	        <div class="swiper-wrapper">
+	        	@foreach($partnersOther as $value)
 	            <div class="swiper-slide"><img src="{{ url($value->image) }}"></div>
 	            @endforeach
 	        </div>
