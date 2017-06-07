@@ -98,6 +98,7 @@
 		<div class="marBot3 description">
 			{{ $post->description }}
 		</div>
+        @if(isset($postInCategory))
         <div class="partner">
             <h3 class="box-title-center">Dự án cùng tiêu chí</h3>
             <!-- Swiper -->
@@ -111,8 +112,8 @@
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
-
         </div>
+        @endif
         @if ($post->form_manual != '')
             {{ $post->form_manual }}
         @endif

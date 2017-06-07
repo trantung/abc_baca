@@ -72,18 +72,22 @@ class SiteController extends HomeController {
 			->first();
 		if(isset($post)) {
 			$images = PostImage::where('post_id', $post->id)->get();
-			$categoryId = RelationProject::where('post_id', $post->id)->first()->type_project_id;
-			$listPostInCategory = RelationProject::where('type_project_id', $categoryId)
-				->where('post_id', '!=', $post->id)
-				->lists('post_id');
-			$postInCategory = Post::where('status', ACTIVE)
-				->whereIn('id', $listPostInCategory)
-				->get();
+			$categoryId = RelationProject::where('post_id', $post->id)->first();
+			if ($categoryId) {
+				$categoryId = $categoryId->type_project_id;
+				$listPostInCategory = RelationProject::where('type_project_id', $categoryId)
+					->where('post_id', '!=', $post->id)
+					->lists('post_id');
+				$postInCategory = Post::where('status', ACTIVE)
+					->whereIn('id', $listPostInCategory)
+					->get();
+	        	return View::make('site.post')->with(compact('post', 'images', 'configSite', 'postInCategory'));
+			}
+	        return View::make('site.post')->with(compact('post', 'images', 'configSite'));
 			//put cache
 	        // $html = View::make('site.post')->with(compact('post', 'images', 'configSite'))->render();
 	        // Cache::forever($cacheName, $html);
 	        //return view
-	        return View::make('site.post')->with(compact('post', 'images', 'configSite', 'postInCategory'));
 		}
 		return Response::view('site.404', [], 404);
 	}
